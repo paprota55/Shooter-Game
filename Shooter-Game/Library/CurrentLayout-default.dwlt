@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 677, y: 492}
   m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-  controlID: 24183
+  controlID: 2274
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 24211
+  controlID: 2351
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 24212
+  controlID: 2352
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -392,7 +392,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 66fbffff6afbffff623b0000
+      m_ExpandedIDs: 66fbffff6afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -447,14 +447,14 @@ MonoBehaviour:
   m_Gizmos: 1
   m_SceneIsLit: 1
   m_SceneLighting: 1
-  m_2DMode: 0
+  m_2DMode: 1
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 5.067383, y: -21.193748, z: -2.5572567}
+    m_Target: {x: -0.064183004, y: -0.0371404, z: 31.989937}
     speed: 2
-    m_Value: {x: 5.067383, y: -21.193748, z: -2.5572567}
+    m_Value: {x: -0.064183004, y: -0.0371404, z: 31.989937}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -482,7 +482,7 @@ MonoBehaviour:
       m_Size: {x: 0, y: 0}
     yGrid:
       m_Fade:
-        m_Target: 1
+        m_Target: 0
         speed: 2
         m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
@@ -490,7 +490,7 @@ MonoBehaviour:
       m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
-        m_Target: 0
+        m_Target: 1
         speed: 2
         m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
@@ -500,17 +500,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.16483405, y: 0.57093734, z: -0.11829857, w: 0.7955285}
+    m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
-    m_Value: {x: 0.16465643, y: 0.57213, z: -0.1185457, w: 0.7946713}
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 58.657936
+    m_Target: 7.7872906
     speed: 2
-    m_Value: 58.657936
+    m_Value: 7.7872906
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_CameraSettings:
     m_Speed: 0.2
     m_SpeedNormalized: 0.07999995
@@ -570,20 +570,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Standard Assets/2D/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Standard Assets/2D/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\Shooter-Game\Shooter-Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: da3c0000
-    m_LastClickedID: 15578
-    m_ExpandedIDs: 00000000da3c0000dc3c0000de3c0000e03c0000e23c0000463d00004c3d00004e3d0000303f000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 319}
+    m_SelectedIDs: b03c0000
+    m_LastClickedID: 15536
+    m_ExpandedIDs: 00000000823c0000843c0000863c0000883c00008a3c00008c3c00008e3c0000903c0000923c00009a3c0000a43c00009c3d00009e3d0000ae3d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -611,7 +611,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000da3c0000dc3c0000de3c0000e03c0000e23c00001e3f0000303f000000ca9a3b
+    m_ExpandedIDs: 00000000823c0000843c0000863c0000883c00008a3c00008c3c00008e3c0000903c0000923c00009a3c0000a43c00009c3d00009e3d0000ae3d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -638,8 +638,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300002c880000124100007641000072410000
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c62300002c8800001241000076410000724100002e400000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
