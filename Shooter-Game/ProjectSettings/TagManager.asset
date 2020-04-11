@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fire
+  - Platform
   layers:
   - Default
   - TransparentFX
@@ -14,20 +15,20 @@ TagManager:
   - UI
   - 
   - 
+  - Foreground
+  - 
+  - 
+  - 
+  - 
   - Player
+  - 
   - Bullet
+  - 
+  - 
+  - 
+  - 
+  - 
   - Background
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 

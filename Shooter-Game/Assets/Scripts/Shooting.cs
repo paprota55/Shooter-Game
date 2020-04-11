@@ -13,6 +13,7 @@ public class Shooting : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
+            Debug.Log("Add shoot sound!");
             Shoot();
         }
     }
@@ -22,5 +23,6 @@ public class Shooting : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, startPosition.position, startPosition.rotation);
         Rigidbody2D rigidBody = bullet.GetComponent<Rigidbody2D>();
         rigidBody.AddForce(startPosition.right * speed, ForceMode2D.Impulse);
+        Destroy(bullet, 2f);
     }
 }

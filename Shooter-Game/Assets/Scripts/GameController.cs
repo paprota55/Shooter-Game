@@ -5,7 +5,10 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public static GameController gm;
-
+    public Transform spawnPoint;
+    public Transform playerObject;
+    public GameObject spawnEffect;
+    public int timeToSpawn = 3;
 
     private void Start()
     {
@@ -15,20 +18,20 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public static void kill(Player player)
+    public static void Kill(Player player)
     {
+        Debug.Log("Add death sound");
         Destroy(player.gameObject);
-        gm.respawnPlayer();
+        gm.StartCoroutine(gm.RespawnPlayer());
+
     }
 
-    public Transform spawnPoint;
-    public Transform playerObject;
-
-
-    public void respawnPlayer()
+    public IEnumerator RespawnPlayer()
     {
+        Debug.Log("Add spawn sound!");
+        yield return new WaitForSeconds(timeToSpawn);
         Instantiate(playerObject, spawnPoint.position, spawnPoint.rotation);
-        Debug.Log("Spawn player");
+        GameObject spawnEffectClone = Instantiate(spawnEffect, spawnPoint.position, spawnPoint.rotation) as GameObject;
+        Destroy(spawnEffectClone, 3f);
     }
-
 }
