@@ -15,15 +15,15 @@ TagManager:
   - UI
   - 
   - 
+  - 
   - Foreground
   - 
   - 
-  - 
-  - 
+  - Enemy
   - Player
   - 
   - Bullet
-  - 
+  - Obstacle
   - 
   - 
   - 

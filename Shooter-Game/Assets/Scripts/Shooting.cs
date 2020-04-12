@@ -6,7 +6,7 @@ public class Shooting : MonoBehaviour
 {
     public Transform startPosition;
     public GameObject bulletPrefab;
-
+    
     public float speed = 20f;
 
     void Update()

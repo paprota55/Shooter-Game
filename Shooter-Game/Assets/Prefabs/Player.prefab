@@ -505,7 +505,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 65591
 --- !u!114 &4655311474088133863
 MonoBehaviour:
   m_ObjectHideFlags: 0
