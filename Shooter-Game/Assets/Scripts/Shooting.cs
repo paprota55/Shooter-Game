@@ -6,15 +6,26 @@ public class Shooting : MonoBehaviour
 {
     public Transform startPosition;
     public GameObject bulletPrefab;
-    
+
     public float speed = 20f;
+    private float time;
+    public float delayTime = 0.1f;
+
+    void Start()
+    {
+        time = 0;
+    }
 
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
-            Debug.Log("Add shoot sound!");
-            Shoot();
+            if (time + delayTime < Time.time || Input.GetButtonDown("Fire1"))
+            {
+                Debug.Log("Add shoot sound!");
+                Shoot();
+                time = Time.time;
+            }
         }
     }
 

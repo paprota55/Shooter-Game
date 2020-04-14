@@ -12,18 +12,25 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        if(gm == null)
-        {;
+        if (gm == null)
+        {
+            ;
             gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         }
     }
 
-    public static void Kill(Player player)
+    public static void KillPlayer(Player player)
     {
         Debug.Log("Add death sound");
         Destroy(player.gameObject);
         gm.StartCoroutine(gm.RespawnPlayer());
 
+    }
+
+    public static void KillEnemy(Enemy enemy)
+    {
+        Debug.Log("Add death sound");
+        Destroy(enemy.gameObject);
     }
 
     public IEnumerator RespawnPlayer()

@@ -18,18 +18,18 @@ public class Player : MonoBehaviour
     {
         if(transform.position.y <= -20)
         {
-            AttackPlayer(playerStats.Health);
+            DamagePlayer(playerStats.Health);
         }
     }
 
-    public void AttackPlayer(float damage)
+    public void DamagePlayer(float damage)
     {
         Debug.Log("Add hit sound");
         playerStats.Health -= damage;
 
         if(playerStats.Health <=0)
         {
-            GameController.Kill(this);
+            GameController.KillPlayer(this);
         }
     }
 }
