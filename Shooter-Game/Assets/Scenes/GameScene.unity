@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 132897559}
   - component: {fileID: 132897558}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: background_town
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,8 +174,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2090781175
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -4410443967663567168, guid: 17fdec7f091a06c4da0372002bbbbf06,
     type: 3}
@@ -1251,7 +1251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2042909601}
   - component: {fileID: 2042909600}
-  m_Layer: 10
+  m_Layer: 21
   m_Name: background_park
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1333,7 +1333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2123719715}
   - component: {fileID: 2123719714}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: foreground_ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
