@@ -5,14 +5,22 @@ using UnityEngine;
 [System.Serializable]
 public class EnemyStats
 {
-    public float Health = 100;
+    public float maxHealth = 100;
+    public float currentHealth;    
 
+    public void Init()
+    {
+        currentHealth = maxHealth;
+    }
 }
 
 public class Enemy : MonoBehaviour
 {
     public EnemyStats enemyStats = new EnemyStats();
 
+    [Header("Optional: ")]
+    [SerializeField]
+    private EnemyStatus status;
     void Update()
     {
     }
@@ -20,11 +28,25 @@ public class Enemy : MonoBehaviour
     public void DamageEnemy(float damage)
     {
         Debug.Log("Add hit sound");
-        enemyStats.Health -= damage;
+        enemyStats.currentHealth -= damage;
 
-        if (enemyStats.Health <= 0)
+        if (enemyStats.currentHealth <= 0)
         {
             GameController.KillEnemy(this);
+        }
+
+        if (status != null)
+        {
+            status.UpdateHealth(enemyStats.currentHealth, enemyStats.maxHealth);
+        }
+    }
+
+    private void Start()
+    {
+        enemyStats.Init();
+        if(status != null)
+        {
+            status.UpdateHealth(enemyStats.currentHealth, enemyStats.maxHealth);
         }
     }
 }
