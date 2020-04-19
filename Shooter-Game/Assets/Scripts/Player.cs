@@ -5,31 +5,51 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerStats
 {
-    public float Health = 100;
+    public float maxHealth = 100;
+    public float currentHealth;
 
+    public void Init()
+    {
+        currentHealth = maxHealth;
+    }
 }
 
 public class Player : MonoBehaviour
 {
     public PlayerStats playerStats = new PlayerStats();
+    [SerializeField]
+    private Status status;
 
     public int atitudeLimitToDie = -10;
     void Update()
     {
         if(transform.position.y <= -20)
         {
-            DamagePlayer(playerStats.Health);
+            DamagePlayer(playerStats.currentHealth);
+        }
+
+        if (status != null)
+        {
+            status.UpdateHealth(playerStats.currentHealth, playerStats.maxHealth);
         }
     }
 
     public void DamagePlayer(float damage)
     {
         Debug.Log("Add hit sound");
-        playerStats.Health -= damage;
+        playerStats.currentHealth -= damage;
 
-        if(playerStats.Health <=0)
+        if(playerStats.currentHealth <= 0)
         {
             GameController.KillPlayer(this);
+        }
+    }
+    private void Start()
+    {
+        playerStats.Init();
+        if (status != null)
+        {
+            status.UpdateHealth(playerStats.currentHealth, playerStats.maxHealth);
         }
     }
 }

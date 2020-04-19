@@ -6,7 +6,8 @@ using UnityEngine;
 public class EnemyStats
 {
     public float maxHealth = 100;
-    public float currentHealth;    
+    public float currentHealth;
+    public float damage = 10;
 
     public void Init()
     {
@@ -20,7 +21,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Optional: ")]
     [SerializeField]
-    private EnemyStatus status;
+    private Status status;
     void Update()
     {
     }
@@ -39,6 +40,7 @@ public class Enemy : MonoBehaviour
         {
             status.UpdateHealth(enemyStats.currentHealth, enemyStats.maxHealth);
         }
+        else Debug.LogError("Player haven't UI!");
     }
 
     private void Start()
@@ -47,6 +49,15 @@ public class Enemy : MonoBehaviour
         if(status != null)
         {
             status.UpdateHealth(enemyStats.currentHealth, enemyStats.maxHealth);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Player player = collision.collider.GetComponent<Player>();
+        if(player != null)
+        {
+            player.DamagePlayer(enemyStats.damage);
         }
     }
 }

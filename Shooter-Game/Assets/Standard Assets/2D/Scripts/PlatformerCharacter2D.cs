@@ -30,7 +30,7 @@ namespace UnityStandardAssets._2D
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
-            characterSprite = transform.FindChild("Character"); // 
+            characterSprite = transform.Find("Character"); // 
 
             if(characterSprite == null)
             {
