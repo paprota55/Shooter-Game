@@ -13,7 +13,7 @@ public class Shooting : MonoBehaviour
 
     void Start()
     {
-        time = 0;
+        time = 0;    
     }
 
     void Update()

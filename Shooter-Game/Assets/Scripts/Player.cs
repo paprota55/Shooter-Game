@@ -7,7 +7,7 @@ public class PlayerStats
 {
     public float maxHealth = 100;
     public float currentHealth;
-
+    public float damage = 50;
     public void Init()
     {
         currentHealth = maxHealth;

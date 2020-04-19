@@ -9,7 +9,7 @@ public class Parallaxing : MonoBehaviour
     public float transition = 1f;   //how fast transition will be
     public Transform[] objects;     //Array of foreground and background objects to parallax
 
-    private new Transform camera;       //main camera from game
+    private Transform camera;       //main camera from game
     private Vector3 startCameraPosition; //variable to store camera position which will be needed to calculate parallax
 
 
