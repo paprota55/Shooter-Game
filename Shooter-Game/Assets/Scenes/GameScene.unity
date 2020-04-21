@@ -1716,6 +1716,7 @@ GameObject:
   - component: {fileID: 2032516513}
   - component: {fileID: 2032516512}
   - component: {fileID: 2032516511}
+  - component: {fileID: 2032516515}
   m_Layer: 5
   m_Name: GameGUI
   m_TagString: Untagged
@@ -1803,6 +1804,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2032516515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032516510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e9a332276b369e47bee1180466d4a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveCounter: {fileID: 934791449}
+  waveInc: {fileID: 640524007}
+  spawner: {fileID: 263069578}
+  counterDelay: 0
+  IncDelay: 0
+  del1: 1
+  del2: 3
 --- !u!1 &2036842293
 GameObject:
   m_ObjectHideFlags: 0

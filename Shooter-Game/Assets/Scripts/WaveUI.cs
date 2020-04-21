@@ -25,7 +25,6 @@ public class WaveUI : MonoBehaviour
             Debug.LogError("Some problems in Start methods in WaveUI");
             this.enabled = false;
         }
-        StartCoroutine(changeColor());
     }
 
     
@@ -56,14 +55,5 @@ public class WaveUI : MonoBehaviour
         waveAnim.SetBool("Counter", true);
         waveAnim.SetBool("WaveInc", false);
         counter.text = ((int)wave.getCounter() + 1).ToString();
-    }
-
-    IEnumerator changeColor()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(1.0f);
-            counter.color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
-        }
     }
 }
