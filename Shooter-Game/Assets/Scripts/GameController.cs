@@ -9,8 +9,19 @@ public class GameController : MonoBehaviour
     public Transform playerObject;
     public GameObject spawnEffect;
     public GameObject deadEffect;
-    public CameraShake shake;
     public int timeToSpawn = 3;
+    public static int playerChances;
+
+    [SerializeField]
+    private int _playerChances = 3;
+
+    [SerializeField]
+    private GameObject endGameUI;
+
+    public static int getPlayerChances()
+    {
+        return playerChances;
+    }
 
     private void Start()
     {
@@ -18,6 +29,8 @@ public class GameController : MonoBehaviour
         {
             gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         }
+
+        playerChances = _playerChances;
     }
 
     public static void KillPlayer(Player player)
@@ -28,14 +41,23 @@ public class GameController : MonoBehaviour
 
     public void _KillPlayer(Player _player)
     {
-        Debug.Log("Add death sound");
-        Destroy(_player.gameObject);
-        GameObject spawnEffectClone = Instantiate(deadEffect, _player.transform.position, _player.transform.rotation) as GameObject;
+         Debug.Log("Add death sound");
+         Destroy(_player.gameObject);
+         GameObject spawnEffectClone = Instantiate(deadEffect, _player.transform.position, _player.transform.rotation) as GameObject;
 
-        Destroy(spawnEffectClone, 1f);
-        Destroy(_player.gameObject);
+         Destroy(spawnEffectClone, 1f);
+         Destroy(_player.gameObject);
 
-        gm.StartCoroutine(gm.RespawnPlayer());
+        playerChances -= 1;
+        if (playerChances > 0)
+        {
+            gm.StartCoroutine(gm.RespawnPlayer());
+        }
+
+        else
+        {
+            gm.EndGame();
+        }
     }
 
     public static void KillEnemy(Enemy enemy)
@@ -49,6 +71,11 @@ public class GameController : MonoBehaviour
         GameObject spawnEffectClone = Instantiate(deadEffect, _enemy.transform.position, _enemy.transform.rotation) as GameObject;
         Destroy(spawnEffectClone, 1f);
         Destroy(_enemy.gameObject);
+    }
+
+    public void EndGame()
+    {
+        endGameUI.SetActive(true);
     }
 
     public IEnumerator RespawnPlayer()
