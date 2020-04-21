@@ -27,6 +27,21 @@ public class MonsterSpawner : MonoBehaviour
         counterToNextWave = timeToNextWave;
     }
 
+    public State getState()
+    {
+        return state;
+    }
+
+    public float getCounter()
+    {
+        return counterToNextWave;
+    }
+
+    public int getWaveNumber()
+    {
+        return whichWave;
+    }
+
     private void Update()
     {
         if(state == State.WAIT)

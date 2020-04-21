@@ -11,6 +11,7 @@ public class Shooting : MonoBehaviour
     private float time;
     public float delayTime = 0.1f;
 
+    bool autoShooting = false;
     void Start()
     {
         time = 0;    
@@ -18,7 +19,8 @@ public class Shooting : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButtonDown("Fire2")) autoShooting = !autoShooting;
+        if (Input.GetButton("Fire1") || autoShooting)
         {
             if (time + delayTime < Time.time || Input.GetButtonDown("Fire1"))
             {

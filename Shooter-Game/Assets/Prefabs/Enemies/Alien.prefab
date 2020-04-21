@@ -76,7 +76,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100 HP
+  m_Text: HealthText
 --- !u!1 &3500814727034317009
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,13 +396,13 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!114 &3500814728143553291
 MonoBehaviour:
@@ -419,7 +419,7 @@ MonoBehaviour:
   player: {fileID: 0}
   updateClock: 1
   moveDistance: 3
-  speed: 600
+  speed: 1200
   forceMode: 0
   pathIsEnded: 0
 --- !u!61 &3500814728143553290
