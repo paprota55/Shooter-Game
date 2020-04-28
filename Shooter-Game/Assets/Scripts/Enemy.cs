@@ -8,7 +8,8 @@ public class EnemyStats
     public float maxHealth = 100;
     public float currentHealth;
     public float damage = 10;
-
+    public int score = 10;
+    public int money = 10;
     public void Init()
     {
         currentHealth = maxHealth;
@@ -21,7 +22,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Optional: ")]
     [SerializeField]
-    private Status status;
+    private StatusUI status;
     void Update()
     {
     }

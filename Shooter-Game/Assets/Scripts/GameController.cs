@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -11,16 +12,33 @@ public class GameController : MonoBehaviour
     public GameObject deadEffect;
     public int timeToSpawn = 3;
     public static int playerChances;
+    public static int score;
+    public static int money;
 
     [SerializeField]
     private int _playerChances = 3;
 
     [SerializeField]
+    private int _score = 0;
+
+    [SerializeField]
+    private int _money = 0;
+
+    [SerializeField]
     private GameObject endGameUI;
 
+    public static int getMoney()
+    {
+        return money;
+    }
     public static int getPlayerChances()
     {
         return playerChances;
+    }
+
+    public static int getScore()
+    {
+        return score;
     }
 
     private void Start()
@@ -31,6 +49,8 @@ public class GameController : MonoBehaviour
         }
 
         playerChances = _playerChances;
+        score = _score;
+        money = _money;
     }
 
     public static void KillPlayer(Player player)
@@ -62,6 +82,7 @@ public class GameController : MonoBehaviour
 
     public static void KillEnemy(Enemy enemy)
     {
+        gm.UpdatePlayerStash(enemy);
         gm._KillEnemy(enemy);
     }
 
@@ -71,6 +92,12 @@ public class GameController : MonoBehaviour
         GameObject spawnEffectClone = Instantiate(deadEffect, _enemy.transform.position, _enemy.transform.rotation) as GameObject;
         Destroy(spawnEffectClone, 1f);
         Destroy(_enemy.gameObject);
+    }
+
+    public void UpdatePlayerStash(Enemy _enemy)
+    {
+        score += _enemy.enemyStats.score;
+        money += _enemy.enemyStats.money;
     }
 
     public void EndGame()

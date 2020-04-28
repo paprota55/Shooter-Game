@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 {
     public PlayerStats playerStats = new PlayerStats();
     [SerializeField]
-    private Status status;
+    private StatusUI status;
 
     public int atitudeLimitToDie = -10;
     void Update()

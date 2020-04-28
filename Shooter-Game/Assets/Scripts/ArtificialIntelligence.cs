@@ -79,13 +79,16 @@ public class ArtificialIntelligence : MonoBehaviour
         {
             if (!noPlayer)
             {
-                noPlayer = !noPlayer;
+                noPlayer = true;
                 StartCoroutine(PlayerSearch());
             }
         }
-        enemy.StartPath(transform.position, player.position, OnPathComplete);
-        yield return new WaitForSeconds(1f / updateClock);
-        StartCoroutine(UpdatePath());
+        else
+        {
+            enemy.StartPath(transform.position, player.position, OnPathComplete);
+            yield return new WaitForSeconds(1f / updateClock);
+            StartCoroutine(UpdatePath());
+        }
     }
 
     void FixedUpdate()
@@ -94,7 +97,7 @@ public class ArtificialIntelligence : MonoBehaviour
         {
             if (!noPlayer)
             {
-                noPlayer = !noPlayer;
+                noPlayer = true;
                 StartCoroutine(PlayerSearch());
             }
             return;

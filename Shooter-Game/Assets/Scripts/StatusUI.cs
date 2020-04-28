@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Status : MonoBehaviour
+public class StatusUI : MonoBehaviour
 {   [SerializeField]
     private RectTransform healthBar;
     [SerializeField]

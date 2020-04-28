@@ -14,5 +14,10 @@ public class EndGameUI : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
     }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
 }
 
