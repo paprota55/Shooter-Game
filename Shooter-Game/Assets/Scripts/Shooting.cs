@@ -34,7 +34,7 @@ public class Shooting : MonoBehaviour
         {
             if (time + delayTime < Time.time || Input.GetButtonDown("Fire1"))   //if fire is true and delay is good then update shoot clock, play sound and make "Shoot"
             {
-                Debug.Log("Add shoot sound!");
+                AudioManager.manager.Play("Shot");
                 Shoot();
                 time = Time.time;
             }

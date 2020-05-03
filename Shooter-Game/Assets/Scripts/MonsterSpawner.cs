@@ -7,7 +7,9 @@ public class Wave
 {
     public GameObject enemy;
     public int quantity;
-    public float delay;
+    [HideInInspector]
+    public float delay = 1.0f;
+    [HideInInspector]
     public int whichWave;
 }
 
@@ -22,9 +24,12 @@ public class MonsterSpawner : MonoBehaviour
     public float timeToNextWave = 8f;
     private float counterToNextWave;
 
+    bool spawn;
+
     private void Start()
     {
         counterToNextWave = timeToNextWave;
+        spawn = true;
     }
 
     public State getState()
@@ -44,30 +49,33 @@ public class MonsterSpawner : MonoBehaviour
 
     private void Update()
     {
-        if(state == State.WAIT)
+        if (spawn)
         {
-            if (IsEnemyAlive() == false)
+            if (state == State.WAIT)
             {
+                if (IsEnemyAlive() == false)
+                {
 
-                arrangementsToNextWave();
-                return;
+                    arrangementsToNextWave();
+                    return;
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            if (counterToNextWave <= 0)
+            {
+                if (state == State.COUNT)
+                {
+                    StartCoroutine(Spawn(wavesList[whichWave]));
+                }
             }
             else
             {
-                return;
+                counterToNextWave -= Time.deltaTime;
             }
-        }
-
-        if(counterToNextWave <= 0)
-        {
-            if(state == State.COUNT)
-            {
-                StartCoroutine(Spawn(wavesList[whichWave]));
-            }
-        }
-        else
-        {
-            counterToNextWave -= Time.deltaTime;
         }
     }
 
@@ -78,7 +86,8 @@ public class MonsterSpawner : MonoBehaviour
         whichWave += 1;
         if (whichWave  > wavesList.Length - 1)
         {
-            whichWave = 0;
+            spawn = false;
+            GameController.WinGame();
         }
     }
 
@@ -97,8 +106,9 @@ public class MonsterSpawner : MonoBehaviour
 
         for(int i = 0;i<wave.quantity;i++)
         {
-            SpawnEnemy(wave.enemy);
             yield return new WaitForSeconds(wave.delay);
+            AudioManager.manager.Play("Spawn");
+            SpawnEnemy(wave.enemy);
         }
 
         state = State.WAIT;

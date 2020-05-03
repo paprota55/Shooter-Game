@@ -17,11 +17,13 @@ public class Bullet : MonoBehaviour
             {
                 enemy.DamageEnemy(damage);
             }
+            AudioManager.manager.Play("BulletDestroy");
             Destroy(gameObject);
             Effect();
         }
         else
         {
+            AudioManager.manager.Play("BulletDestroy");
             Destroy(gameObject);
             Effect();
         }

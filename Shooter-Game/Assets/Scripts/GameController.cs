@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -26,6 +27,12 @@ public class GameController : MonoBehaviour
 
     [SerializeField]
     private GameObject endGameUI;
+
+    [SerializeField]
+    private GameObject winGameUI;
+
+    [SerializeField]
+    private GameObject waveUI;
 
     public static int getMoney()
     {
@@ -61,16 +68,20 @@ public class GameController : MonoBehaviour
 
     public void _KillPlayer(Player _player)
     {
-         Debug.Log("Add death sound");
-         Destroy(_player.gameObject);
-         GameObject spawnEffectClone = Instantiate(deadEffect, _player.transform.position, _player.transform.rotation) as GameObject;
+        Debug.Log("Add death sound");
+        Destroy(_player.gameObject);
+        GameObject spawnEffectClone = Instantiate(deadEffect, _player.transform.position, _player.transform.rotation) as GameObject;
 
-         Destroy(spawnEffectClone, 1f);
-         Destroy(_player.gameObject);
+        Destroy(spawnEffectClone, 1f);
+        Destroy(_player.gameObject);
 
         playerChances -= 1;
+
+        AudioManager.manager.Play("PlayerDead");
+      
         if (playerChances > 0)
         {
+            AudioManager.manager.Play("Respawn");
             gm.StartCoroutine(gm.RespawnPlayer());
         }
 
@@ -88,7 +99,7 @@ public class GameController : MonoBehaviour
 
     public void _KillEnemy(Enemy _enemy)
     {
-        Debug.Log("Add death sound");
+        AudioManager.manager.Play("EnemyDead");
         GameObject spawnEffectClone = Instantiate(deadEffect, _enemy.transform.position, _enemy.transform.rotation) as GameObject;
         Destroy(spawnEffectClone, 1f);
         Destroy(_enemy.gameObject);
@@ -102,7 +113,21 @@ public class GameController : MonoBehaviour
 
     public void EndGame()
     {
+        AudioManager.manager.Play("GameOver");
         endGameUI.SetActive(true);
+        waveUI.SetActive(false);
+    }
+
+    public static void WinGame()
+    {
+        AudioManager.manager.Play("GameOver");
+        gm._WinGame();
+    }
+
+    public void _WinGame()
+    {
+        winGameUI.SetActive(true);
+        waveUI.SetActive(false);
     }
 
     public IEnumerator RespawnPlayer()
@@ -110,6 +135,7 @@ public class GameController : MonoBehaviour
         Debug.Log("Add spawn sound!");
         yield return new WaitForSeconds(timeToSpawn);
         Instantiate(playerObject, spawnPoint.position, spawnPoint.rotation);
+        AudioManager.manager.Play("Spawn");
         GameObject spawnEffectClone = Instantiate(spawnEffect, spawnPoint.position, spawnPoint.rotation) as GameObject;
         Destroy(spawnEffectClone, 3f);
     }
