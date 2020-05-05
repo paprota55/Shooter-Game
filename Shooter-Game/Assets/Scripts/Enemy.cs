@@ -20,7 +20,6 @@ public class Enemy : MonoBehaviour
 {
     public EnemyStats enemyStats = new EnemyStats();
 
-    [Header("Optional: ")]
     [SerializeField]
     private StatusUI status;
     void Update()

@@ -8,6 +8,7 @@ public class EndGameUI : MonoBehaviour
 {
 
     public Text scoreText;
+    public string gameMusicName = "GameMusic";
     public void Exit()
     {
         Application.Quit();
@@ -31,6 +32,11 @@ public class EndGameUI : MonoBehaviour
     private void Update()
     {
         SetScore();
+    }
+
+    private void Start()
+    {
+        AudioManager.manager.Stop(gameMusicName);
     }
 }
 
