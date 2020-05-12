@@ -102,49 +102,23 @@ public class AudioManager : MonoBehaviour
                 return;
             }
         }
+    }  
+
+    public void UpdateEffectsVolume(float vol)
+    {
+        for (int i = 0; i < soundList.Length; i++)
+        {
+            if(!soundList[i].loop)
+            soundList[i].SetVolume(vol);
+        }
     }
 
-    /*private void Update()
+    public void UpdateMusicVolume(float vol)
     {
-        if(newSfxVolume != oldSfxVolume)
+        for (int i = 0; i < soundList.Length; i++)
         {
-            for (int i = 0; i < soundList.Length; i++)
-            {
-                if (soundList[i].clip.length < 10.0f)
-                {
-                    soundList[i].SetVolume(newSfxVolume);
-                }
-            }
-            oldSfxVolume = newSfxVolume;
+            if (soundList[i].loop)
+                soundList[i].SetVolume(vol);
         }
-
-        if (newMusicVolume != oldMusicVolume)
-        {
-            for (int i = 0; i < soundList.Length; i++)
-            {
-                if (soundList[i].clip.length > 10.0f)
-                {
-                    soundList[i].SetVolume(newMusicVolume);
-                }
-            }
-            oldMusicVolume = newMusicVolume;
-        }
-
-        if (SceneManager.GetActiveScene().name.Equals("MenuScene"))
-        {
-            if (soundList[gameMusic].isPlaying())
-            {
-                soundList[menuMusic].Play();
-                soundList[gameMusic].Stop();
-            }
-        }
-        else
-        {
-            if (soundList[menuMusic].isPlaying())
-            {
-                soundList[menuMusic].Stop();
-                soundList[gameMusic].Play();
-            }
-        }
-    }*/
+    }
 }
