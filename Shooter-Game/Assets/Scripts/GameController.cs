@@ -40,6 +40,16 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private GameObject waveUI;
 
+    [SerializeField]
+    private GameObject shopUI;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+        }
+    }
+
     public static int getMoney()
     {
         return money;

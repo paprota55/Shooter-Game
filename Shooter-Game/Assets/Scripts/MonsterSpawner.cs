@@ -13,7 +13,7 @@ public class Wave
     public int whichWave;
 }
 
-public enum State { SPAWN, WAIT, COUNT };
+public enum State { SPAWN, WAIT, COUNT, PAUSE };
 
 public class MonsterSpawner : MonoBehaviour
 {
@@ -74,6 +74,7 @@ public class MonsterSpawner : MonoBehaviour
             }
             else
             {
+                if(state != State.PAUSE)
                 counterToNextWave -= Time.deltaTime;
             }
         }

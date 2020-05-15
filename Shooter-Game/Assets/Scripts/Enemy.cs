@@ -22,9 +22,6 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     private StatusUI status;
-    void Update()
-    {
-    }
 
     public void DamageEnemy(float damage)
     {

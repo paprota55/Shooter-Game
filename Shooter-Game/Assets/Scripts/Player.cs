@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets._2D;
+using UnityEditor;
 
 [System.Serializable]
 public class PlayerStats
@@ -8,7 +11,7 @@ public class PlayerStats
     public float maxHealth = 100;
     public float currentHealth;
     public float damage = 50;
-    public void Init()
+    public void init()
     {
         currentHealth = maxHealth;
     }
@@ -44,9 +47,10 @@ public class Player : MonoBehaviour
             GameController.KillPlayer(this);
         }
     }
+
     private void Start()
     {
-        playerStats.Init();
+        playerStats.init();
         if (status != null)
         {
             status.UpdateHealth(playerStats.currentHealth, playerStats.maxHealth);

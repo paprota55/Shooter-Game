@@ -7,13 +7,13 @@ using UnityEngine.UI;
 public class MenuUI : MonoBehaviour
 {
     public string menuMusic = "MenuMusic";
-    public GameObject ButtonsUI;
-    public GameObject GameName;
-    public GameObject SettingsUI;
-    public Text VolumeText;
-    public Slider VolumeSlider;
-    public Text VolumeMText;
-    public Slider VolumeMSlider;
+    public GameObject buttonsUI;
+    public GameObject gameName;
+    public GameObject settingsUI;
+    public Text volumeText;
+    public Slider volumeSlider;
+    public Text volumeMText;
+    public Slider volumeMSlider;
 
     private void Start()
     {
@@ -36,29 +36,29 @@ public class MenuUI : MonoBehaviour
 
     public void Settings()
     {
-        ButtonsUI.SetActive(false);
-        SettingsUI.SetActive(true);
+        buttonsUI.SetActive(false);
+        settingsUI.SetActive(true);
     }
 
     public void BackToMenu()
     {
-        ButtonsUI.SetActive(true);
-        SettingsUI.SetActive(false);
+        buttonsUI.SetActive(true);
+        settingsUI.SetActive(false);
     }
 
     public void ChangeEffectVolume()
     {
-        float volF = VolumeSlider.value;
+        float volF = volumeSlider.value;
         AudioManager.manager.UpdateEffectsVolume(volF);
         volF *= 100;
-        VolumeText.text = ((int)volF).ToString();
+        volumeText.text = ((int)volF).ToString();
     }
     
     public void ChangeMusicVolume()
     {
-        float volF = VolumeMSlider.value;
+        float volF = volumeMSlider.value;
         AudioManager.manager.UpdateMusicVolume(volF);
         volF *= 100;
-        VolumeMText.text = ((int)volF).ToString();
+        volumeMText.text = ((int)volF).ToString();
     }
 }
