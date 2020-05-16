@@ -46,7 +46,7 @@ public class Bullet : MonoBehaviour
         if (newPlayer != null)
         {
             Player player = newPlayer.GetComponent<Player>();
-            SetDamage(player.playerStats.damage);
+            SetDamage(PlayerStats.instance.damage);
         }
     }
 }

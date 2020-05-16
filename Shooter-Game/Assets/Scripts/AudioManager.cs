@@ -102,7 +102,17 @@ public class AudioManager : MonoBehaviour
                 return;
             }
         }
-    }  
+    }
+
+    public void StopAll()
+    {
+        for (int i = 0; i < soundList.Length; i++)
+        {
+
+            soundList[i].Stop();
+
+        }
+    }
 
     public void UpdateEffectsVolume(float vol)
     {

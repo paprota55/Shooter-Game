@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour
     private int _score = 0;
 
     [SerializeField]
-    private int _money = 0;
+    private int _money = 100;
 
     [SerializeField]
     private GameObject endGameUI;
@@ -45,21 +45,36 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-        }
     }
 
-    public static int getMoney()
+    
+
+    public void IncreaseMoney(int tmp)
+    {
+        money += tmp;
+    }
+
+    public void IncreaseChance(int tmp)
+    {
+        playerChances += tmp;
+    }
+
+    public void IncreaseScore(int tmp)
+    {
+        score += tmp;
+    }
+    
+
+    public static int GetMoney()
     {
         return money;
     }
-    public static int getPlayerChances()
+    public static int GetPlayerChances()
     {
         return playerChances;
     }
 
-    public static int getScore()
+    public static int GetScore()
     {
         return score;
     }

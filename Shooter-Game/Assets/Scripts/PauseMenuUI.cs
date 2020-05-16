@@ -26,9 +26,17 @@ public class PauseMenuUI : MonoBehaviour
         settingsUI.SetActive(true);
     }
 
+    public void BackFromSettings()
+    {
+        buttonsUI.SetActive(true);
+        settingsUI.SetActive(false);
+    }
+
     public void BackToMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        AudioManager.manager.StopAll();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void ChangeEffectVolume()

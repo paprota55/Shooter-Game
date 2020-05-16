@@ -1762,13 +1762,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuMusic: MenuMusic
-  ButtonsUI: {fileID: 876545655}
-  GameName: {fileID: 896128025}
-  SettingsUI: {fileID: 1025738406}
-  VolumeText: {fileID: 983061509}
-  VolumeSlider: {fileID: 23475750}
-  VolumeMText: {fileID: 388810229}
-  VolumeMSlider: {fileID: 1361649524}
+  buttonsUI: {fileID: 876545655}
+  gameName: {fileID: 896128025}
+  settingsUI: {fileID: 1025738406}
+  volumeText: {fileID: 983061509}
+  volumeSlider: {fileID: 23475750}
+  volumeMText: {fileID: 388810229}
+  volumeMSlider: {fileID: 1361649524}
 --- !u!225 &977346441
 CanvasGroup:
   m_ObjectHideFlags: 0

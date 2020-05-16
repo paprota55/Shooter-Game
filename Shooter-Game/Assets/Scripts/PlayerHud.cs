@@ -17,16 +17,16 @@ public class PlayerHud : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        ChancesText.text = "CHANCES: " + GameController.getPlayerChances().ToString();
-        ScoreText.text = "SCORE: " + GameController.getScore().ToString();
-        MoneyText.text = "MONEY: " + GameController.getMoney().ToString();
+        ChancesText.text = "CHANCES: " + GameController.GetPlayerChances().ToString();
+        ScoreText.text = "SCORE: " + GameController.GetScore().ToString();
+        MoneyText.text = "MONEY: " + GameController.GetMoney().ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ChancesText.text = "CHANCES: " + GameController.getPlayerChances().ToString();
-        ScoreText.text = "SCORE: " + GameController.getScore().ToString();
-        MoneyText.text = "MONEY: " + GameController.getMoney().ToString();
+        ChancesText.text = "CHANCES: " + GameController.GetPlayerChances().ToString();
+        ScoreText.text = "SCORE: " + GameController.GetScore().ToString();
+        MoneyText.text = "MONEY: " + GameController.GetMoney().ToString();
     }
 }

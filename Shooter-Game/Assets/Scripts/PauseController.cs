@@ -14,32 +14,37 @@ public class PauseController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
-
-            if (isInShop)
+            if (!isInShop)
             {
-                Resume();
+                if (!isInMenu)
+                {
+                    ShopPause();
+                }
             }
 
             else
             {
-                ShopPause();
+                Resume();
             }
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isInMenu)
+            if (!isInMenu)
             {
-                Resume();
+                if (!isInShop)
+                {
+                    MenuPause();
+                }
             }
 
             else
             {
-                MenuPause();
+                Resume();
             }
         }
     }
 
-    void Resume()
+    public void Resume()
     {
         isInMenu = false;
         isInShop = false;

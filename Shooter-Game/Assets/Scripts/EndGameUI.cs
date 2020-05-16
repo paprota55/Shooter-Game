@@ -26,7 +26,7 @@ public class EndGameUI : MonoBehaviour
 
     public void SetScore()
     {
-        scoreText.text = "YOUR SCORE: " + GameController.getScore().ToString();
+        scoreText.text = "YOUR SCORE: " + GameController.GetScore().ToString();
     }
 
     private void Update()

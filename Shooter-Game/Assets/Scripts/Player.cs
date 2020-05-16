@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityStandardAssets._2D;
 using UnityEditor;
 
-[System.Serializable]
+/*[System.Serializable]
 public class PlayerStats
 {
     public float maxHealth = 100;
@@ -15,11 +15,11 @@ public class PlayerStats
     {
         currentHealth = maxHealth;
     }
-}
+}*/
 
 public class Player : MonoBehaviour
 {
-    public PlayerStats playerStats = new PlayerStats();
+    private PlayerStats playerStats;
     [SerializeField]
     private StatusUI status;
 
@@ -48,12 +48,20 @@ public class Player : MonoBehaviour
         }
     }
 
+    void RegenHealth()
+    {
+        if(playerStats.maxHealth > playerStats.currentHealth)
+        playerStats.currentHealth += playerStats.regen;
+    }
+
     private void Start()
     {
-        playerStats.init();
+        playerStats = PlayerStats.instance;
+        playerStats.Respawn();
         if (status != null)
         {
             status.UpdateHealth(playerStats.currentHealth, playerStats.maxHealth);
         }
+        InvokeRepeating("RegenHealth", playerStats.healthRegenRate, playerStats.healthRegenRate); 
     }
 }
