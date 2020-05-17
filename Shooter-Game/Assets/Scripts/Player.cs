@@ -5,18 +5,6 @@ using UnityEngine;
 using UnityStandardAssets._2D;
 using UnityEditor;
 
-/*[System.Serializable]
-public class PlayerStats
-{
-    public float maxHealth = 100;
-    public float currentHealth;
-    public float damage = 50;
-    public void init()
-    {
-        currentHealth = maxHealth;
-    }
-}*/
-
 public class Player : MonoBehaviour
 {
     private PlayerStats playerStats;
@@ -48,6 +36,24 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void EnableMove()
+    {
+        Platformer2DUserControl movement = GetComponentInChildren<Platformer2DUserControl>();
+        movement.enabled = true;
+    }
+
+    public void DisableMove()
+    {
+        Platformer2DUserControl movement = GetComponentInChildren<Platformer2DUserControl>();
+        movement.enabled = false;
+    }
+
+    public void DisableBodyVelocity()
+    {
+        Rigidbody2D body = GetComponentInChildren<Rigidbody2D>();
+        body.velocity = new Vector2(0, 0);
+    }
+
     void RegenHealth()
     {
         if(playerStats.maxHealth > playerStats.currentHealth)
@@ -62,6 +68,7 @@ public class Player : MonoBehaviour
         {
             status.UpdateHealth(playerStats.currentHealth, playerStats.maxHealth);
         }
-        InvokeRepeating("RegenHealth", playerStats.healthRegenRate, playerStats.healthRegenRate); 
+        InvokeRepeating("RegenHealth", playerStats.healthRegenRate, playerStats.healthRegenRate);
+        EnableMove();
     }
 }

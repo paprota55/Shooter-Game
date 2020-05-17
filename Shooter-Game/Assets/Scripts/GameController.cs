@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityStandardAssets._2D;
 
 public class GameController : MonoBehaviour
 {
@@ -160,10 +161,17 @@ public class GameController : MonoBehaviour
     public void _WinGame()
     {
         AudioManager.manager.Play(gameOverSound);
-
+        DisablePlayer();
         score += money;
         winGameUI.SetActive(true);
         waveUI.SetActive(false);
+    }
+
+    public void DisablePlayer()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<Player>().DisableMove();
+        player.GetComponent<Player>().DisableBodyVelocity();
     }
 
     public IEnumerator RespawnPlayer()

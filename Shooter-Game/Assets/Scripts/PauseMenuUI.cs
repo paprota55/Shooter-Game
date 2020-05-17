@@ -24,6 +24,8 @@ public class PauseMenuUI : MonoBehaviour
     {
         buttonsUI.SetActive(false);
         settingsUI.SetActive(true);
+        volumeText.text = (volumeSlider.value*100).ToString();
+        volumeMText.text = (volumeMSlider.value*100).ToString();
     }
 
     public void BackFromSettings()
