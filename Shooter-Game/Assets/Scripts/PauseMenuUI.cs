@@ -15,6 +15,11 @@ public class PauseMenuUI : MonoBehaviour
     public Text volumeMText;
     public Slider volumeMSlider;
 
+    private void Start()
+    {
+        volumeSlider.value = AudioManager.manager.GetEffectVolume();
+        volumeMSlider.value = AudioManager.manager.GetMusicVolume();
+    }
     public void Exit()
     {
         Application.Quit();
@@ -24,8 +29,8 @@ public class PauseMenuUI : MonoBehaviour
     {
         buttonsUI.SetActive(false);
         settingsUI.SetActive(true);
-        volumeText.text = (volumeSlider.value*100).ToString();
-        volumeMText.text = (volumeMSlider.value*100).ToString();
+        volumeText.text = ((int)(volumeSlider.value*100)).ToString();
+        volumeMText.text = ((int)(volumeMSlider.value*100)).ToString();
     }
 
     public void BackFromSettings()

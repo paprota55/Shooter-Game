@@ -45,11 +45,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField]
     public Sound[] soundList;
-    public float oldSfxVolume = 1.0f;
-    public float newSfxVolume = 1.0f;
-    public float newMusicVolume = 1.0f;
-    public float oldMusicVolume = 1.0f;
-    int menuMusic, gameMusic;
+    private float sfxVolume = 1.0f;
+    private float musicVolume = 1.0f;
     private void Awake()
     {
         if (manager == null)
@@ -71,13 +68,11 @@ public class AudioManager : MonoBehaviour
         for (int i = 0; i<soundList.Length;i++)
         {
             GameObject audioObject = new GameObject(i + "." + soundList[i].name);
-            if (soundList[i].name == "GameMusic") gameMusic = i;
-            if (soundList[i].name == "MenuMusic") menuMusic = i;
             audioObject.transform.SetParent(this.transform);
             soundList[i].SetSource(audioObject.AddComponent<AudioSource>());
-            soundList[i].SetVolume(newSfxVolume);
+            soundList[i].SetVolume(sfxVolume);
         }
-        soundList[menuMusic].Play();
+        manager.Play("MenuMusic");
     }
 
     public void Play(string name)
@@ -118,9 +113,12 @@ public class AudioManager : MonoBehaviour
     {
         for (int i = 0; i < soundList.Length; i++)
         {
-            if(!soundList[i].loop)
-            soundList[i].SetVolume(vol);
+            if (!soundList[i].loop)
+            {
+                soundList[i].SetVolume(vol);
+            }
         }
+        sfxVolume = vol;
     }
 
     public void UpdateMusicVolume(float vol)
@@ -128,7 +126,20 @@ public class AudioManager : MonoBehaviour
         for (int i = 0; i < soundList.Length; i++)
         {
             if (soundList[i].loop)
+            {
                 soundList[i].SetVolume(vol);
+            }
         }
+        musicVolume = vol;
+    }
+
+    public float GetEffectVolume()
+    {
+        return sfxVolume;
+    }
+
+    public float GetMusicVolume()
+    {
+        return musicVolume;
     }
 }

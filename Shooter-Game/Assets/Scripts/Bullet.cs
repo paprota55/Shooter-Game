@@ -42,10 +42,8 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        GameObject newPlayer = GameObject.FindGameObjectWithTag("Player");
-        if (newPlayer != null)
+        if (PlayerStats.instance != null)
         {
-            Player player = newPlayer.GetComponent<Player>();
             SetDamage(PlayerStats.instance.damage);
         }
     }

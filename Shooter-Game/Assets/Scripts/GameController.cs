@@ -103,23 +103,26 @@ public class GameController : MonoBehaviour
     {
         AudioManager.manager.Play(playerDeadSound);
 
-        Destroy(_player.gameObject);
-        GameObject spawnEffectClone = Instantiate(deadEffect, _player.transform.position, _player.transform.rotation) as GameObject;
+        
+            Destroy(_player.gameObject);
+            GameObject spawnEffectClone = Instantiate(deadEffect, _player.transform.position, _player.transform.rotation) as GameObject;
 
-        Destroy(spawnEffectClone, 1f);
-        Destroy(_player.gameObject);
-
-        playerChances -= 1;
-      
-        if (playerChances > 0)
+            Destroy(spawnEffectClone, 1f);
+            Destroy(_player.gameObject);
+        if (!winGameUI.activeSelf)
         {
-            AudioManager.manager.Play(spawnSound);
-            gm.StartCoroutine(gm.RespawnPlayer());
-        }
+            playerChances -= 1;
 
-        else
-        {
-            gm.EndGame();
+            if (playerChances > 0)
+            {
+                AudioManager.manager.Play(spawnSound);
+                gm.StartCoroutine(gm.RespawnPlayer());
+            }
+
+            else
+            {
+                gm.EndGame();
+            }
         }
     }
 

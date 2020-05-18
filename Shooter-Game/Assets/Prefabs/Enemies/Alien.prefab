@@ -465,6 +465,8 @@ MonoBehaviour:
     maxHealth: 100
     currentHealth: 0
     damage: 10
+    score: 10
+    money: 10
   status: {fileID: 3500814727034317012}
 --- !u!95 &1876370679
 Animator:

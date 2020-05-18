@@ -18,6 +18,9 @@ public class MenuUI : MonoBehaviour
     private void Start()
     {
         AudioManager.manager.Play(menuMusic);
+        volumeSlider.value = AudioManager.manager.GetEffectVolume();
+        volumeMSlider.value = AudioManager.manager.GetMusicVolume();
+
     }
     public void Exit()
     {
@@ -38,8 +41,8 @@ public class MenuUI : MonoBehaviour
     {
         buttonsUI.SetActive(false);
         settingsUI.SetActive(true);
-        volumeText.text = (volumeSlider.value * 100).ToString();
-        volumeMText.text = (volumeMSlider.value * 100).ToString();
+        volumeText.text = ((int)(volumeSlider.value * 100)).ToString();
+        volumeMText.text = ((int)(volumeMSlider.value * 100)).ToString();
     }
 
     public void BackToMenu()
