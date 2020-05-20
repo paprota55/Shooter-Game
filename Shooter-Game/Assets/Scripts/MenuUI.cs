@@ -15,6 +15,7 @@ public class MenuUI : MonoBehaviour
     public Slider volumeSlider;
     public Text volumeMText;
     public Slider volumeMSlider;
+    public GameObject savedData;
 
     private void Start()
     {
@@ -39,6 +40,8 @@ public class MenuUI : MonoBehaviour
 
     public void LoadGame()
     {
+        if(DataManager.CheckFilesToLoad())
+            Instantiate(savedData);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

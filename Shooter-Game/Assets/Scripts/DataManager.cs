@@ -13,6 +13,8 @@ public static class DataManager
 
     public static bool CheckFilesToLoad()
     {
+        if (File.Exists(playerStatsPath))
+            return true;
 
         return false;
     }
@@ -23,21 +25,21 @@ public static class DataManager
     {
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream stream = new FileStream(playerStatsPath, FileMode.Create);
-        formatter.Serialize(stream, data);
+        PlayerStatsMemory memory = new PlayerStatsMemory(data);
+        formatter.Serialize(stream, memory);
         stream.Close();
     }
 
-    public static PlayerStats LoadPlayerStats()
+    public static PlayerStatsMemory LoadPlayerStats()
     {
-        PlayerStats data;
         if (File.Exists(playerStatsPath))
         {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(playerStatsPath, FileMode.Open);
             stream.Position = 0;
-            data = formatter.Deserialize(stream) as PlayerStats;
+            PlayerStatsMemory memory = formatter.Deserialize(stream) as PlayerStatsMemory;
             stream.Close();
-            return data;
+            return memory;
         }
         else
         {

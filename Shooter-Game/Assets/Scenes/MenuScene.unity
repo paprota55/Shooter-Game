@@ -2926,6 +2926,8 @@ MonoBehaviour:
   volumeSlider: {fileID: 23475750}
   volumeMText: {fileID: 388810229}
   volumeMSlider: {fileID: 1361649524}
+  savedData: {fileID: 8886369590054269074, guid: 7f916e2f021e1da43bfd1afd73729be1,
+    type: 3}
 --- !u!225 &977346441
 CanvasGroup:
   m_ObjectHideFlags: 0

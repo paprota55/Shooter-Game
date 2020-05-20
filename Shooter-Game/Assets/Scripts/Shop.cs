@@ -14,15 +14,12 @@ public class Shop : MonoBehaviour
     public Text speedPriceText;
     public Text damagePriceText;
     public Text chancePriceText;
-    private int money;
-    private int chances;
     private int healthPrice;
     private int speedPrice;
     private int damagePrice;
     private int chancePrice;
-
+    private int money;
     public float priceRate = 0.5f;
-
     private float healthRate = 0.5f;
     private float speedRate = 0.01f;
     private float damageRate = 0.1f;
@@ -39,12 +36,11 @@ public class Shop : MonoBehaviour
     private void Update()
     {
         money = PlayerStats.instance.Money;
-        chances = PlayerStats.instance.Chances;
         moneyText.text = "MONEY: " + money;
         healthText.text = "HEALTH: " + PlayerStats.instance.MaxHealth;
         speedText.text = "SPEED: " + PlayerStats.instance.Speed;
         damageText.text = "DAMAGE: " + PlayerStats.instance.Damage;
-        chanceText.text = "CHANCES: " + chances;
+        chanceText.text = "CHANCES: " + PlayerStats.instance.Chances;
         healthPriceText.text = healthPrice.ToString();
         speedPriceText.text = speedPrice.ToString();
         damagePriceText.text = damagePrice.ToString();

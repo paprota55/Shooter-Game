@@ -18,7 +18,6 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-
     private float _maxHealth = 100;
     public float MaxHealth
     {
@@ -110,7 +109,6 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-
     private float _healthRegenRate = 1f;
     public float HealthRegenRate
     {
@@ -123,7 +121,6 @@ public class PlayerStats : MonoBehaviour
             _healthRegenRate = value;
         }
     }
-
 
     private float _speed = 10;
     public float Speed
@@ -140,15 +137,37 @@ public class PlayerStats : MonoBehaviour
 
     public void Awake()
     {
-        if(instance == null)
+        GameObject save = GameObject.FindGameObjectWithTag("SavedData");
+        if(save!=null)
+        {
+            instance = this;
+            instance.SetStats(DataManager.LoadPlayerStats());
+            save.GetComponent<GameActualization>().playerStats = true;
+        }
+        else if(instance == null)
         {
             instance = this;
         }
+
         _currentHealth = _maxHealth;
     }
 
     public void Respawn()
     {
         _currentHealth = _maxHealth;
+    }
+
+    private void SetStats(PlayerStatsMemory data)
+    {
+        _playerName = data.name;
+        _maxHealth = data.maxHealth;
+        _currentHealth = data.currentHealth;
+        _playerChances = data.chances;
+        _score = data.score;
+        _money = data.money;
+        _damage = data.damage;
+        _regen = data.regen;
+        _healthRegenRate = data.healthRegenRate;
+        _speed = data.speed;
     }
 }

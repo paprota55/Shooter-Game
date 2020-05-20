@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class GameActualization : MonoBehaviour
 {
-    bool playerPos;
-    bool playerStats;
+    public bool playerStats;
 
     private void Start()
     {
-        playerPos = false;
         playerStats = false;
+        DontDestroyOnLoad(this);
     }
 
     private void Update()
     {
-        if(playerPos && playerStats)
+        if(playerStats)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 }

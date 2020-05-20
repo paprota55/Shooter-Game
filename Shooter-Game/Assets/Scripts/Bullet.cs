@@ -42,9 +42,8 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerStats.instance != null)
-        {
-            SetDamage(PlayerStats.instance.Damage);
-        }
+        SetDamage(PlayerStats.instance.Damage);
     }
+
+
 }
