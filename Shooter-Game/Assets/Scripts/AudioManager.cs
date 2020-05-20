@@ -68,7 +68,7 @@ public class AudioManager : MonoBehaviour
         float[] data = DataManager.LoadVolume();
         sfxVolume = data[0];
         musicVolume = data[1];
-        Debug.LogError(sfxVolume + " " + musicVolume);
+
         for (int i = 0; i<soundList.Length;i++)
         {
             GameObject audioObject = new GameObject(i + "." + soundList[i].name);

@@ -57,4 +57,9 @@ public class Enemy : MonoBehaviour
             player.DamagePlayer(enemyStats.damage);
         }
     }
+
+    private void OnDestroy()
+    {
+        PlayerStats.instance.Money += enemyStats.money;
+    }
 }

@@ -9,8 +9,11 @@ public class Wave
     public int quantity;
     [HideInInspector]
     public float delay = 1.0f;
-    [HideInInspector]
-    public int whichWave;
+
+    Wave()
+    {
+        delay = 0.25f;
+    }
 }
 
 public enum State { SPAWN, WAIT, COUNT, PAUSE };

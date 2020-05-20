@@ -44,7 +44,7 @@ public class PauseMenuUI : MonoBehaviour
     public void SaveName()
     {
         PlayerStats.instance.PlayerName = playerName.text;
-        DataManager.SaveNewHighscore(GameController.gm.Score, PlayerStats.instance.PlayerName);
+        DataManager.SaveNewHighscore(PlayerStats.instance.Score, PlayerStats.instance.PlayerName);
         enterNameUI.SetActive(false);
     }
 

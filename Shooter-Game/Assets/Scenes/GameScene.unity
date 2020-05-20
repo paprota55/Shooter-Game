@@ -1290,8 +1290,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2032516516}
-        m_MethodName: BackToMenu
+      - m_Target: {fileID: 263069577}
+        m_MethodName: SaveData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1528,15 +1528,12 @@ MonoBehaviour:
   - enemy: {fileID: 3500814728143553300, guid: d423ad7900bd29d4aaa9be23b1a5eb0f, type: 3}
     quantity: 3
     delay: 0
-    whichWave: 0
   - enemy: {fileID: 2373617853344763343, guid: 38018eeb30436284c8e8b104b87f0b5d, type: 3}
     quantity: 3
     delay: 0
-    whichWave: 0
   - enemy: {fileID: 5527662953093999471, guid: b0306345e969fc14cae511dc061f4ee6, type: 3}
     quantity: 3
     delay: 0
-    whichWave: 0
   spawnPoints:
   - {fileID: 211726587}
   - {fileID: 2130678164}

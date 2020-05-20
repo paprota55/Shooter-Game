@@ -7,6 +7,84 @@ using System;
 
 public static class DataManager
 {
+    static string playerStatsPath = Application.persistentDataPath + "/PlayerStats.fun";
+    static string highscoresPath = Application.persistentDataPath + "/Highscores.fun";
+    static string volumePath = Application.persistentDataPath + "/Volume.fun";
+
+    public static bool CheckFilesToLoad()
+    {
+
+        return false;
+    }
+    /// //////////////////////////////////////////////////////
+
+    /// /////////////////PLAYERSTATS//////////////////////////
+    public static void SavePlayerStats(PlayerStats data)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = new FileStream(playerStatsPath, FileMode.Create);
+        formatter.Serialize(stream, data);
+        stream.Close();
+    }
+
+    public static PlayerStats LoadPlayerStats()
+    {
+        PlayerStats data;
+        if (File.Exists(playerStatsPath))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(playerStatsPath, FileMode.Open);
+            stream.Position = 0;
+            data = formatter.Deserialize(stream) as PlayerStats;
+            stream.Close();
+            return data;
+        }
+        else
+        {
+            return null;
+        }
+    }
+    /// /////////////////////////////////////////////////////
+
+    /// /////////////////VOLUME//////////////////////////////
+    public static void SaveVolume(float effect, float music)
+    {
+        float[] data = new float[2];
+        data[0] = effect;
+        data[1] = music;
+
+        BinaryFormatter formatter = new BinaryFormatter();
+        //string path = Application.persistentDataPath + "/Volume.fun";
+        FileStream stream = new FileStream(volumePath, FileMode.Create);
+        formatter.Serialize(stream, data);
+        stream.Close();
+    }
+
+    public static float[] LoadVolume()
+    {
+        //string path = Application.persistentDataPath + "/Volume.fun";
+        float[] data;
+        if (File.Exists(volumePath))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(volumePath, FileMode.Open);
+            stream.Position = 0;
+            data = formatter.Deserialize(stream) as float[];
+            stream.Close();
+        }
+        else
+        {
+            data = new float[2];
+            data[0] = 1f;
+            data[1] = 1f;
+        }
+
+        return data;
+    }
+    /// ////////////////////////////////////////////////////
+
+    /// /////////////////HIGHSCORE//////////////////////////
+
     public static void SaveNewHighscore(int score, string name)
     {
         Highscores table = LoadHighscores();
@@ -14,64 +92,23 @@ public static class DataManager
         SaveHighscoreObject(table);
     }
 
-    private static void SaveHighscoreObject(Highscores high)
+    private static void SaveHighscoreObject(Highscores data)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/Highscores.fun";
-        FileStream stream = new FileStream(path, FileMode.Create);
-        formatter.Serialize(stream, high);
-        stream.Close();
-    }
-
-    public static void SaveVolume(float effect, float music)
-    {
-        Debug.LogError("Zapis");
-        float[] data = new float[2];
-        data[0] = effect;
-        data[1] = music;
-
-        Debug.LogError(data[0] + " " + data[1]);
-
-        BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/Volume.fun";
-        FileStream stream = new FileStream(path, FileMode.Create);
+        //string path = Application.persistentDataPath + "/Highscores.fun";
+        FileStream stream = new FileStream(highscoresPath, FileMode.Create);
         formatter.Serialize(stream, data);
         stream.Close();
     }
 
-    public static float[] LoadVolume()
-    {
-        string path = Application.persistentDataPath + "/Volume.fun";
-        float[] data;
-        if (File.Exists(path))
-        {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
-            stream.Position = 0;
-            data = formatter.Deserialize(stream) as float[];
-            stream.Close();
-            Debug.LogError("Load z pliku");
-        }
-        else
-        {
-            data = new float[2];
-            data[0] = 1f;
-            data[1] = 1f;
-            Debug.LogError("Nie ma danych");
-        }
-        Debug.LogError(data[0] + " " + data[1]);
-
-        return data;
-    }
-
     public static Highscores LoadHighscores()
     {
-        string path = Application.persistentDataPath + "/Highscores.fun";
+        //string path = Application.persistentDataPath + "/Highscores.fun";
         Highscores data;
-        if (File.Exists(path))
+        if (File.Exists(highscoresPath))
         {
             BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
+            FileStream stream = new FileStream(highscoresPath, FileMode.Open);
             stream.Position = 0;
             data = formatter.Deserialize(stream) as Highscores;
             stream.Close();
@@ -85,4 +122,6 @@ public static class DataManager
         
         return data;
     }
+
+    /// ////////////////////////////////////////////////////
 }

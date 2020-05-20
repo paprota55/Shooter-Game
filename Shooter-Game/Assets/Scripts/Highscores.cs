@@ -32,7 +32,6 @@ public class Highscores
 
     public void UpdateResults(int score, string name)
     {
-        Debug.LogError("Jestem here");
         int position = 0;
         int length = results.Length - 1;
         for(int i = 0; i < length + 1;i++)
@@ -42,11 +41,6 @@ public class Highscores
                 position = i;
                 break;
             }
-        }
-
-        for (int i = 0; i < length + 1; i++)
-        {
-            Debug.LogError(names[i] + " " + results[i]);
         }
 
         while (length > position +1)

@@ -13,44 +13,7 @@ public class GameController : MonoBehaviour
     public GameObject spawnEffect;
     public GameObject deadEffect;
     public int timeToSpawn = 3;
-    private int _playerChances = 3;
-    public int PlayerChances
-    {
-        get
-        {
-            return _playerChances;
-        }
-        set
-        {
-            _playerChances = value;
-        }
-    }
-
-    private int _score = 0;
-    public int Score
-    {
-        get
-        {
-            return _score;
-        }
-        set
-        {
-            _score = value;
-        }
-    }
-
-    private int _money = 100;
-    public int Money
-    {
-        get
-        {
-            return _money;
-        }
-        set
-        {
-            _money = value;
-        }
-    }
+    
     public string gameMusicName = "GameMusic";
     public string menuMusicName = "MenuMusic";
     public string playerDeadSound = "PlayerDead";
@@ -78,23 +41,6 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-    }
-
-    
-
-    public void IncreaseMoney(int tmp)
-    {
-        Money += tmp;
-    }
-
-    public void IncreaseChance(int tmp)
-    {
-        PlayerChances += tmp;
-    }
-
-    public void IncreaseScore(int tmp)
-    {
-        Score += tmp;
     }
     
     private void Start()
@@ -127,9 +73,9 @@ public class GameController : MonoBehaviour
             Destroy(_player.gameObject);
         if (!winGameUI.activeSelf)
         {
-            _playerChances -= 1;
+            PlayerStats.instance.Chances -= 1;
 
-            if (_playerChances > 0)
+            if (PlayerStats.instance.Chances > 0)
             {
                 AudioManager.manager.Play(spawnSound);
                 gm.StartCoroutine(gm.RespawnPlayer());
@@ -159,15 +105,15 @@ public class GameController : MonoBehaviour
 
     public void UpdatePlayerStash(Enemy _enemy)
     {
-        _score += _enemy.enemyStats.score;
-        _money += _enemy.enemyStats.money;
+        PlayerStats.instance.Score += _enemy.enemyStats.score;
+        PlayerStats.instance.Score += _enemy.enemyStats.money;
     }
 
     public void EndGame()
     {
         AudioManager.manager.Play(gameOverSound);
 
-        _score += _money;
+        PlayerStats.instance.Score += PlayerStats.instance.Money;
         endGameUI.SetActive(true);
         waveUI.SetActive(false);
         enterNameUI.SetActive(true);
@@ -181,7 +127,7 @@ public class GameController : MonoBehaviour
     public void _WinGame()
     {
         AudioManager.manager.Play(gameOverSound);
-        _score += _money;
+        PlayerStats.instance.Score += PlayerStats.instance.Money;
         winGameUI.SetActive(true);
         waveUI.SetActive(false);
         enterNameUI.SetActive(true);
@@ -195,5 +141,10 @@ public class GameController : MonoBehaviour
         Instantiate(playerObject, spawnPoint.position, spawnPoint.rotation);
         GameObject spawnEffectClone = Instantiate(spawnEffect, spawnPoint.position, spawnPoint.rotation) as GameObject;
         Destroy(spawnEffectClone, 3f);
+    }
+
+    public void SaveData()
+    {
+        DataManager.SavePlayerStats(PlayerStats.instance);
     }
 }

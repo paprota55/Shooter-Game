@@ -45,6 +45,45 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    private int _playerChances = 3;
+    public int Chances
+    {
+        get
+        {
+            return _playerChances;
+        }
+        set
+        {
+            _playerChances = value;
+        }
+    }
+
+    private int _score = 0;
+    public int Score
+    {
+        get
+        {
+            return _score;
+        }
+        set
+        {
+            _score = value;
+        }
+    }
+
+    private int _money = 100;
+    public int Money
+    {
+        get
+        {
+            return _money;
+        }
+        set
+        {
+            _money = value;
+        }
+    }
+
     private float _damage = 50;
     public float Damage
     {

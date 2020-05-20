@@ -17,8 +17,8 @@ public class PlayerHud : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ChancesText.text = "CHANCES: " + GameController.gm.PlayerChances.ToString();
-        ScoreText.text = "SCORE: " + GameController.gm.Score.ToString();
-        MoneyText.text = "MONEY: " + GameController.gm.Money.ToString();
+        ChancesText.text = "CHANCES: " + PlayerStats.instance.Chances.ToString();
+        ScoreText.text = "SCORE: " + PlayerStats.instance.Score.ToString();
+        MoneyText.text = "MONEY: " + PlayerStats.instance.Money.ToString();
     }
 }

@@ -38,8 +38,8 @@ public class Shop : MonoBehaviour
 
     private void Update()
     {
-        money = GameController.gm.Money;
-        chances = GameController.gm.PlayerChances;
+        money = PlayerStats.instance.Money;
+        chances = PlayerStats.instance.Chances;
         moneyText.text = "MONEY: " + money;
         healthText.text = "HEALTH: " + PlayerStats.instance.MaxHealth;
         speedText.text = "SPEED: " + PlayerStats.instance.Speed;
@@ -57,7 +57,7 @@ public class Shop : MonoBehaviour
         {
             PlayerStats.instance.MaxHealth += PlayerStats.instance.MaxHealth * healthRate;
             money -= healthPrice;
-            GameController.gm.IncreaseMoney(-healthPrice);
+            PlayerStats.instance.Money -= healthPrice;
             healthPrice += (int)(priceRate*healthPrice);
         }
     }
@@ -68,7 +68,7 @@ public class Shop : MonoBehaviour
         {
             PlayerStats.instance.Speed += PlayerStats.instance.Speed * speedRate;
             money -= speedPrice;
-            GameController.gm.IncreaseMoney(-speedPrice);
+            PlayerStats.instance.Money -= speedPrice;
             speedPrice += (int)(priceRate * speedPrice);
         }
     }
@@ -77,9 +77,9 @@ public class Shop : MonoBehaviour
     {
         if (money >= chancePrice)
         {
-            GameController.gm.IncreaseChance(chanceRate);
+            PlayerStats.instance.Chances +=chanceRate;
             money -= chancePrice;
-            GameController.gm.IncreaseMoney(-chancePrice);
+            PlayerStats.instance.Money -= chancePrice;
             chancePrice += (int)(priceRate * chancePrice);
         }
     }
@@ -90,7 +90,7 @@ public class Shop : MonoBehaviour
         {
             PlayerStats.instance.Damage += PlayerStats.instance.Damage * damageRate;
             money -= damagePrice;
-            GameController.gm.IncreaseMoney(-damagePrice);
+            PlayerStats.instance.Money -= damagePrice;
             damagePrice += (int)(priceRate * damagePrice);
         }
     }
