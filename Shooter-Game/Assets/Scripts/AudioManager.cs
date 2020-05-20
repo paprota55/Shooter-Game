@@ -45,8 +45,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField]
     public Sound[] soundList;
-    private float sfxVolume = 1.0f;
-    private float musicVolume = 1.0f;
+    private float sfxVolume;
+    private float musicVolume;
     private void Awake()
     {
         if (manager == null)
@@ -65,12 +65,17 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        float[] data = DataManager.LoadVolume();
+        sfxVolume = data[0];
+        musicVolume = data[1];
+        Debug.LogError(sfxVolume + " " + musicVolume);
         for (int i = 0; i<soundList.Length;i++)
         {
             GameObject audioObject = new GameObject(i + "." + soundList[i].name);
             audioObject.transform.SetParent(this.transform);
             soundList[i].SetSource(audioObject.AddComponent<AudioSource>());
-            soundList[i].SetVolume(sfxVolume);
+            if(soundList[i].loop) soundList[i].SetVolume(musicVolume);
+            else soundList[i].SetVolume(sfxVolume);
         }
         manager.Play("MenuMusic");
     }
@@ -141,5 +146,10 @@ public class AudioManager : MonoBehaviour
     public float GetMusicVolume()
     {
         return musicVolume;
+    }
+
+    private void OnDestroy()
+    {
+        DataManager.SaveVolume(sfxVolume, musicVolume);
     }
 }
