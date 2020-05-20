@@ -14,19 +14,11 @@ public class PlayerHud : MonoBehaviour
     [SerializeField]
     private Text ScoreText;
 
-    // Start is called before the first frame update
-    void Awake()
-    {
-        ChancesText.text = "CHANCES: " + GameController.GetPlayerChances().ToString();
-        ScoreText.text = "SCORE: " + GameController.GetScore().ToString();
-        MoneyText.text = "MONEY: " + GameController.GetMoney().ToString();
-    }
-
     // Update is called once per frame
     void Update()
     {
-        ChancesText.text = "CHANCES: " + GameController.GetPlayerChances().ToString();
-        ScoreText.text = "SCORE: " + GameController.GetScore().ToString();
-        MoneyText.text = "MONEY: " + GameController.GetMoney().ToString();
+        ChancesText.text = "CHANCES: " + GameController.gm.PlayerChances.ToString();
+        ScoreText.text = "SCORE: " + GameController.gm.Score.ToString();
+        MoneyText.text = "MONEY: " + GameController.gm.Money.ToString();
     }
 }

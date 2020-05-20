@@ -44,7 +44,7 @@ public class Bullet : MonoBehaviour
     {
         if (PlayerStats.instance != null)
         {
-            SetDamage(PlayerStats.instance.damage);
+            SetDamage(PlayerStats.instance.Damage);
         }
     }
 }

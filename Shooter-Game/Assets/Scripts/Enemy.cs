@@ -55,15 +55,6 @@ public class Enemy : MonoBehaviour
         if(player != null)
         {
             player.DamagePlayer(enemyStats.damage);
-            int randomNumber = Random.Range(0, 1);
-            if(randomNumber == 0)
-            {
-                AudioManager.manager.Play("PlayerHit1");
-            }
-            else
-            {
-                AudioManager.manager.Play("PlayerHit2");
-            }
         }
     }
 }

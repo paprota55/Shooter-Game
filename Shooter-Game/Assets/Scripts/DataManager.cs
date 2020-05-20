@@ -7,18 +7,17 @@ using System;
 
 public static class DataManager
 {
-    public static void SaveResult(int score, string name)
+    public static void SaveNewHighscore(int score, string name)
     {
-        BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/Highscores.hig";
-        FileStream stream = new FileStream(path, FileMode.Create);
-
+        Highscores table = LoadHighscores();
+        table.UpdateResults(score, name);
+        SaveHighscoreObject(table);
     }
 
-    public static void SaveHighscoreObject(Highscores high)
+    private static void SaveHighscoreObject(Highscores high)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = "F:/Shooter-Game/Highscores.fun";
+        string path = Application.persistentDataPath + "/Highscores.fun";
         FileStream stream = new FileStream(path, FileMode.Create);
         formatter.Serialize(stream, high);
         stream.Close();
@@ -26,7 +25,7 @@ public static class DataManager
 
     public static Highscores LoadHighscores()
     {
-        string path = "F:/Shooter-Game/Highscores.fun";
+        string path = Application.persistentDataPath + "/Highscores.fun";
         Highscores data;
         if (File.Exists(path))
         {

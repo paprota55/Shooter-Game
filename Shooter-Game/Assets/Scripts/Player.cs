@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityStandardAssets._2D;
-using UnityEditor;
 
 public class Player : MonoBehaviour
 {
@@ -16,48 +12,38 @@ public class Player : MonoBehaviour
     {
         if(transform.position.y <= -20)
         {
-            DamagePlayer(playerStats.currentHealth);
+            DamagePlayer(playerStats.CurrentHealth);
         }
 
         if (status != null)
         {
-            status.UpdateHealth(playerStats.currentHealth, playerStats.maxHealth);
+            status.UpdateHealth(playerStats.CurrentHealth, playerStats.MaxHealth);
         }
     }
 
     public void DamagePlayer(float damage)
     {
-        Debug.Log("Add hit sound");
-        playerStats.currentHealth -= damage;
+        int randomNumber = Random.Range(0, 1);
+        if (randomNumber == 0)
+        {
+            AudioManager.manager.Play("PlayerHit1");
+        }
+        else
+        {
+            AudioManager.manager.Play("PlayerHit2");
+        }
+        playerStats.CurrentHealth -= damage;
 
-        if(playerStats.currentHealth <= 0)
+        if(playerStats.CurrentHealth <= 0)
         {
             GameController.KillPlayer(this);
         }
     }
 
-    public void EnableMove()
-    {
-        Platformer2DUserControl movement = GetComponentInChildren<Platformer2DUserControl>();
-        movement.enabled = true;
-    }
-
-    public void DisableMove()
-    {
-        Platformer2DUserControl movement = GetComponentInChildren<Platformer2DUserControl>();
-        movement.enabled = false;
-    }
-
-    public void DisableBodyVelocity()
-    {
-        Rigidbody2D body = GetComponentInChildren<Rigidbody2D>();
-        body.velocity = new Vector2(0, 0);
-    }
-
     void RegenHealth()
     {
-        if(playerStats.maxHealth > playerStats.currentHealth)
-        playerStats.currentHealth += playerStats.regen;
+        if(playerStats.MaxHealth > playerStats.CurrentHealth)
+        playerStats.CurrentHealth += playerStats.Regen;
     }
 
     private void Start()
@@ -66,9 +52,8 @@ public class Player : MonoBehaviour
         playerStats.Respawn();
         if (status != null)
         {
-            status.UpdateHealth(playerStats.currentHealth, playerStats.maxHealth);
+            status.UpdateHealth(playerStats.CurrentHealth, playerStats.MaxHealth);
         }
-        InvokeRepeating("RegenHealth", playerStats.healthRegenRate, playerStats.healthRegenRate);
-        EnableMove();
+        InvokeRepeating("RegenHealth", playerStats.HealthRegenRate, playerStats.HealthRegenRate);
     }
 }

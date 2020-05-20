@@ -13,24 +13,50 @@ public class GameController : MonoBehaviour
     public GameObject spawnEffect;
     public GameObject deadEffect;
     public int timeToSpawn = 3;
-    public static int playerChances;
-    public static int score;
-    public static int money;
+    private int _playerChances = 3;
+    public int PlayerChances
+    {
+        get
+        {
+            return _playerChances;
+        }
+        set
+        {
+            _playerChances = value;
+        }
+    }
+
+    private int _score = 0;
+    public int Score
+    {
+        get
+        {
+            return _score;
+        }
+        set
+        {
+            _score = value;
+        }
+    }
+
+    private int _money = 100;
+    public int Money
+    {
+        get
+        {
+            return _money;
+        }
+        set
+        {
+            _money = value;
+        }
+    }
     public string gameMusicName = "GameMusic";
     public string menuMusicName = "MenuMusic";
     public string playerDeadSound = "PlayerDead";
     public string spawnSound = "Respawn";
     public string gameOverSound = "GameOver";
     public string enemyDeadSound = "EnemyDead";
-
-    [SerializeField]
-    private int _playerChances = 3;
-
-    [SerializeField]
-    private int _score = 0;
-
-    [SerializeField]
-    private int _money = 100;
 
     [SerializeField]
     private GameObject endGameUI;
@@ -44,6 +70,12 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private GameObject shopUI;
 
+    [SerializeField]
+    private GameObject playerUI;
+
+    [SerializeField]
+    private GameObject enterNameUI;
+
     private void Update()
     {
     }
@@ -52,34 +84,19 @@ public class GameController : MonoBehaviour
 
     public void IncreaseMoney(int tmp)
     {
-        money += tmp;
+        Money += tmp;
     }
 
     public void IncreaseChance(int tmp)
     {
-        playerChances += tmp;
+        PlayerChances += tmp;
     }
 
     public void IncreaseScore(int tmp)
     {
-        score += tmp;
+        Score += tmp;
     }
     
-
-    public static int GetMoney()
-    {
-        return money;
-    }
-    public static int GetPlayerChances()
-    {
-        return playerChances;
-    }
-
-    public static int GetScore()
-    {
-        return score;
-    }
-
     private void Start()
     {
         if (gm == null)
@@ -87,9 +104,8 @@ public class GameController : MonoBehaviour
             gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         }
 
-        playerChances = _playerChances;
-        score = _score;
-        money = _money;
+        playerUI.SetActive(true);
+        enterNameUI.SetActive(false);
         AudioManager.manager.Stop(menuMusicName);
         AudioManager.manager.Play(gameMusicName);
     }
@@ -111,9 +127,9 @@ public class GameController : MonoBehaviour
             Destroy(_player.gameObject);
         if (!winGameUI.activeSelf)
         {
-            playerChances -= 1;
+            _playerChances -= 1;
 
-            if (playerChances > 0)
+            if (_playerChances > 0)
             {
                 AudioManager.manager.Play(spawnSound);
                 gm.StartCoroutine(gm.RespawnPlayer());
@@ -143,17 +159,18 @@ public class GameController : MonoBehaviour
 
     public void UpdatePlayerStash(Enemy _enemy)
     {
-        score += _enemy.enemyStats.score;
-        money += _enemy.enemyStats.money;
+        _score += _enemy.enemyStats.score;
+        _money += _enemy.enemyStats.money;
     }
 
     public void EndGame()
     {
         AudioManager.manager.Play(gameOverSound);
 
-        score += money;
+        _score += _money;
         endGameUI.SetActive(true);
         waveUI.SetActive(false);
+        enterNameUI.SetActive(true);
     }
 
     public static void WinGame()
@@ -164,17 +181,10 @@ public class GameController : MonoBehaviour
     public void _WinGame()
     {
         AudioManager.manager.Play(gameOverSound);
-        DisablePlayer();
-        score += money;
+        _score += _money;
         winGameUI.SetActive(true);
         waveUI.SetActive(false);
-    }
-
-    public void DisablePlayer()
-    {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<Player>().DisableMove();
-        player.GetComponent<Player>().DisableBodyVelocity();
+        enterNameUI.SetActive(true);
     }
 
     public IEnumerator RespawnPlayer()

@@ -52,8 +52,10 @@ public class MenuUI : MonoBehaviour
 
     public void BackToMenu()
     {
-        buttonsUI.SetActive(true);
         settingsUI.SetActive(false);
+        highscoresUI.SetActive(false);
+        buttonsUI.SetActive(true);
+        gameName.SetActive(true);
     }
 
     public void ChangeEffectVolume()

@@ -38,12 +38,12 @@ public class Shop : MonoBehaviour
 
     private void Update()
     {
-        money = GameController.GetMoney();
-        chances = GameController.GetPlayerChances();
+        money = GameController.gm.Money;
+        chances = GameController.gm.PlayerChances;
         moneyText.text = "MONEY: " + money;
-        healthText.text = "HEALTH: " + PlayerStats.instance.maxHealth;
-        speedText.text = "SPEED: " + PlayerStats.instance.speed;
-        damageText.text = "DAMAGE: " + PlayerStats.instance.damage;
+        healthText.text = "HEALTH: " + PlayerStats.instance.MaxHealth;
+        speedText.text = "SPEED: " + PlayerStats.instance.Speed;
+        damageText.text = "DAMAGE: " + PlayerStats.instance.Damage;
         chanceText.text = "CHANCES: " + chances;
         healthPriceText.text = healthPrice.ToString();
         speedPriceText.text = speedPrice.ToString();
@@ -55,7 +55,7 @@ public class Shop : MonoBehaviour
     {
         if(money >= healthPrice)
         {
-            PlayerStats.instance.maxHealth += PlayerStats.instance.maxHealth * healthRate;
+            PlayerStats.instance.MaxHealth += PlayerStats.instance.MaxHealth * healthRate;
             money -= healthPrice;
             GameController.gm.IncreaseMoney(-healthPrice);
             healthPrice += (int)(priceRate*healthPrice);
@@ -66,7 +66,7 @@ public class Shop : MonoBehaviour
     {
         if (money >= speedPrice)
         {
-            PlayerStats.instance.speed += PlayerStats.instance.speed * speedRate;
+            PlayerStats.instance.Speed += PlayerStats.instance.Speed * speedRate;
             money -= speedPrice;
             GameController.gm.IncreaseMoney(-speedPrice);
             speedPrice += (int)(priceRate * speedPrice);
@@ -88,7 +88,7 @@ public class Shop : MonoBehaviour
     {
         if (money >= healthPrice)
         {
-            PlayerStats.instance.damage += PlayerStats.instance.damage * damageRate;
+            PlayerStats.instance.Damage += PlayerStats.instance.Damage * damageRate;
             money -= damagePrice;
             GameController.gm.IncreaseMoney(-damagePrice);
             damagePrice += (int)(priceRate * damagePrice);

@@ -10,6 +10,8 @@ public class PauseMenuUI : MonoBehaviour
     public GameObject buttonsUI;
     public GameObject gameName;
     public GameObject settingsUI;
+    public GameObject enterNameUI;
+    public InputField playerName;
     public Text volumeText;
     public Slider volumeSlider;
     public Text volumeMText;
@@ -37,6 +39,13 @@ public class PauseMenuUI : MonoBehaviour
     {
         buttonsUI.SetActive(true);
         settingsUI.SetActive(false);
+    }
+
+    public void SaveName()
+    {
+        PlayerStats.instance.PlayerName = playerName.text;
+        DataManager.SaveNewHighscore(GameController.gm.Score, PlayerStats.instance.PlayerName);
+        enterNameUI.SetActive(false);
     }
 
     public void BackToMenu()
