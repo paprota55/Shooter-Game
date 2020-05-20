@@ -10,6 +10,7 @@ public class MenuUI : MonoBehaviour
     public GameObject buttonsUI;
     public GameObject gameName;
     public GameObject settingsUI;
+    public GameObject highscoresUI;
     public Text volumeText;
     public Slider volumeSlider;
     public Text volumeMText;
@@ -20,6 +21,10 @@ public class MenuUI : MonoBehaviour
         AudioManager.manager.Play(menuMusic);
         volumeSlider.value = AudioManager.manager.GetEffectVolume();
         volumeMSlider.value = AudioManager.manager.GetMusicVolume();
+        buttonsUI.SetActive(true);
+        gameName.SetActive(true);
+        settingsUI.SetActive(false);
+        highscoresUI.SetActive(false);
 
     }
     public void Exit()
@@ -65,5 +70,12 @@ public class MenuUI : MonoBehaviour
         AudioManager.manager.UpdateMusicVolume(volF);
         volF *= 100;
         volumeMText.text = ((int)volF).ToString();
+    }
+
+    public void Highscores()
+    {
+        buttonsUI.SetActive(false);
+        gameName.SetActive(false);
+        highscoresUI.SetActive(true);
     }
 }
