@@ -10,15 +10,49 @@ public static class DataManager
     static string playerStatsPath = Application.persistentDataPath + "/PlayerStats.fun";
     static string playerPath = Application.persistentDataPath + "/Player.fun";
     static string highscoresPath = Application.persistentDataPath + "/Highscores.fun";
+    static string shopPath = Application.persistentDataPath + "/Shop.fun";
     static string volumePath = Application.persistentDataPath + "/Volume.fun";
 
     public static bool CheckFilesToLoad()
     {
-        if (File.Exists(playerStatsPath))
+        if (File.Exists(playerStatsPath) && File.Exists(playerPath)&&File.Exists(shopPath))
             return true;
 
         return false;
     }
+     
+    /// //////////////////////////////////////////////////////
+
+    /// /////////////////SHOP/////////////////////////////////
+
+    public static void SaveShop(Shop data)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = new FileStream(shopPath, FileMode.Create);
+        ShopMemory memory = new ShopMemory(data);
+        formatter.Serialize(stream, memory);
+        stream.Close();
+    }
+
+    public static ShopMemory LoadShop()
+    {
+        if (File.Exists(shopPath))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(shopPath, FileMode.Open);
+            stream.Position = 0;
+            ShopMemory memory = formatter.Deserialize(stream) as ShopMemory;
+            stream.Close();
+            return memory;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+
+
     /// //////////////////////////////////////////////////////
 
     /// /////////////////PLAYER///////////////////////////////

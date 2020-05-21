@@ -15,11 +15,55 @@ public class Shop : MonoBehaviour
     public Text damagePriceText;
     public Text chancePriceText;
     private int healthPrice;
+    public int HealthPrice
+    {
+        get
+        {
+            return healthPrice;
+        }
+        set
+        {
+            healthPrice = value;
+        }
+    }
     private int speedPrice;
+    public int SpeedPrice
+    {
+        get
+        {
+            return speedPrice;
+        }
+        set
+        {
+            speedPrice = value;
+        }
+    }
     private int damagePrice;
+    public int DamagePrice
+    {
+        get
+        {
+            return damagePrice;
+        }
+        set
+        {
+            damagePrice = value;
+        }
+    }
     private int chancePrice;
+    public int ChancePrice
+    {
+        get
+        {
+            return chancePrice;
+        }
+        set
+        {
+            chancePrice = value;
+        }
+    }
     private int money;
-    public float priceRate = 0.5f;
+    public float priceRate = 0.25f;
     private float healthRate = 0.5f;
     private float speedRate = 0.01f;
     private float damageRate = 0.1f;
@@ -27,10 +71,20 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
-        healthPrice = 100;
-        speedPrice = 100;
-        damagePrice = 100;
-        chancePrice = 500;
+        GameObject save = GameObject.FindGameObjectWithTag("SavedData");
+        if (save != null)
+        {
+            LoadData(DataManager.LoadShop());
+            save.GetComponent<GameActualization>().shop = true;
+        }
+        else
+        {
+            healthPrice = 100;
+            speedPrice = 100;
+            damagePrice = 100;
+            chancePrice = 500;
+        }
+
     }
 
     private void Update()
@@ -51,7 +105,7 @@ public class Shop : MonoBehaviour
     {
         if(money >= healthPrice)
         {
-            PlayerStats.instance.MaxHealth += PlayerStats.instance.MaxHealth * healthRate;
+            PlayerStats.instance.MaxHealth += (int)(PlayerStats.instance.MaxHealth * healthRate);
             money -= healthPrice;
             PlayerStats.instance.Money -= healthPrice;
             healthPrice += (int)(priceRate*healthPrice);
@@ -83,13 +137,21 @@ public class Shop : MonoBehaviour
 
     public void BuyDamage()
     {
-        if (money >= healthPrice)
+        if (money >= damagePrice)
         {
-            PlayerStats.instance.Damage += PlayerStats.instance.Damage * damageRate;
+            PlayerStats.instance.Damage += (int)(PlayerStats.instance.Damage * damageRate);
             PlayerStats.instance.Damage = Mathf.Round(PlayerStats.instance.Damage * 100f) / 100f;
             money -= damagePrice;
             PlayerStats.instance.Money -= damagePrice;
             damagePrice += (int)(priceRate * damagePrice);
         }
+    }
+
+    void LoadData(ShopMemory data)
+    {
+        healthPrice = data.healthPrice;
+        speedPrice = data.speedPrice;
+        damagePrice = data.damagePrice;
+        chancePrice = data.chancePrice;
     }
 }

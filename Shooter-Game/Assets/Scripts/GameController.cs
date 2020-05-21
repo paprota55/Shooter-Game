@@ -41,11 +41,11 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.M))
+        if(Input.GetKeyDown(KeyCode.M))
         {
             PlayerStats.instance.Money += 10000;
         }
-        if (Input.GetKey(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             PlayerStats.instance.Score += 10000;
         }
@@ -154,11 +154,24 @@ public class GameController : MonoBehaviour
     public void SaveData()
     {
         DataManager.SavePlayerStats(PlayerStats.instance);
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-            DataManager.SavePlayer(player.transform.position);
+        GameObject data = GameObject.FindGameObjectWithTag("Player");
+        if (data != null)
+        {
+            DataManager.SavePlayer(data.transform.position);
+        }
         else
+        {
             DataManager.SavePlayer(spawnPoint.position);
+        }
 
+
+        if (shopUI != null)
+        {
+            DataManager.SaveShop(shopUI.GetComponent<Shop>());
+        }
+        else
+        {
+            DataManager.SaveShop(new Shop());
+        }
     }
 }
