@@ -8,11 +8,13 @@ public class GameActualization : MonoBehaviour
     public bool playerStats;
     public bool player;
     public bool shop;
+    public bool monsterSpawner;
     private void Start()
     {
         playerStats = false;
         player = false;
         shop = false;
+        monsterSpawner = false;
         DontDestroyOnLoad(this);
     }
 

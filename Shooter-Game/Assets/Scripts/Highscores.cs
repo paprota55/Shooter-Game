@@ -32,19 +32,22 @@ public class Highscores
 
     public void UpdateResults(int score, string name)
     {
-        int position = 100;
+        int position = 50;
         int length = results.Length - 1;
-        for(int i = 0; i < length + 1;i++)
+
+        for (int i = 0; i < length + 1; i++)
         {
-            if(results[i]<score)
+            if (results[i] < score)
             {
                 position = i;
+
                 break;
             }
         }
+
         if (position < length)
         {
-            while (length > position + 1)
+            while (length > position)
             {
                 results[length] = results[length - 1];
                 names[length] = names[length - 1];
@@ -53,7 +56,7 @@ public class Highscores
             results[position] = score;
             names[position] = name;
         }
-        
+
     }
     public void AddNoName()
     {

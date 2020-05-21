@@ -41,14 +41,14 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.M))
+        /*if(Input.GetKeyDown(KeyCode.M))
         {
             PlayerStats.instance.Money += 10000;
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
             PlayerStats.instance.Score += 10000;
-        }
+        }*/
     }
     
     private void Start()
@@ -173,5 +173,7 @@ public class GameController : MonoBehaviour
         {
             DataManager.SaveShop(new Shop());
         }
+
+
     }
 }
