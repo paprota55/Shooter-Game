@@ -148,8 +148,10 @@ public class PlayerStats : MonoBehaviour
         {
             instance = this;
         }
-
-        _currentHealth = _maxHealth;
+        else
+        {
+            _currentHealth = _maxHealth;
+        }
     }
 
     public void Respawn()

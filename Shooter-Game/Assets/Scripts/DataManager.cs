@@ -8,6 +8,7 @@ using System;
 public static class DataManager
 {
     static string playerStatsPath = Application.persistentDataPath + "/PlayerStats.fun";
+    static string playerPath = Application.persistentDataPath + "/Player.fun";
     static string highscoresPath = Application.persistentDataPath + "/Highscores.fun";
     static string volumePath = Application.persistentDataPath + "/Volume.fun";
 
@@ -18,6 +19,37 @@ public static class DataManager
 
         return false;
     }
+    /// //////////////////////////////////////////////////////
+
+    /// /////////////////PLAYER///////////////////////////////
+
+    public static void SavePlayer(Vector3 data)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = new FileStream(playerPath, FileMode.Create);
+        PlayerMemory memory = new PlayerMemory(data);
+        formatter.Serialize(stream, memory);
+        stream.Close();
+    }
+
+    public static PlayerMemory LoadPlayer()
+    {
+        if (File.Exists(playerPath))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(playerPath, FileMode.Open);
+            stream.Position = 0;
+            PlayerMemory memory = formatter.Deserialize(stream) as PlayerMemory;
+            stream.Close();
+            return memory;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+
     /// //////////////////////////////////////////////////////
 
     /// /////////////////PLAYERSTATS//////////////////////////

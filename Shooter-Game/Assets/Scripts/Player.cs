@@ -40,6 +40,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void UpdatePosition(PlayerMemory mem)
+    {
+        this.transform.position = new Vector3(mem.pos[0], mem.pos[1], mem.pos[2]);
+    }
+
     void RegenHealth()
     {
         if(playerStats.MaxHealth > playerStats.CurrentHealth)
@@ -48,8 +53,17 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        GameObject save = GameObject.FindGameObjectWithTag("SavedData");
         playerStats = PlayerStats.instance;
-        playerStats.Respawn();
+        if (save != null)
+        {
+            UpdatePosition(DataManager.LoadPlayer());
+            save.GetComponent<GameActualization>().player = true;
+        }
+        else
+        {
+            playerStats.Respawn();
+        }
         if (status != null)
         {
             status.UpdateHealth(playerStats.CurrentHealth, playerStats.MaxHealth);

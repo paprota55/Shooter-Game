@@ -63,6 +63,7 @@ public class Shop : MonoBehaviour
         if (money >= speedPrice)
         {
             PlayerStats.instance.Speed += PlayerStats.instance.Speed * speedRate;
+            PlayerStats.instance.Speed = Mathf.Round(PlayerStats.instance.Speed * 100f) / 100f;
             money -= speedPrice;
             PlayerStats.instance.Money -= speedPrice;
             speedPrice += (int)(priceRate * speedPrice);
@@ -85,6 +86,7 @@ public class Shop : MonoBehaviour
         if (money >= healthPrice)
         {
             PlayerStats.instance.Damage += PlayerStats.instance.Damage * damageRate;
+            PlayerStats.instance.Damage = Mathf.Round(PlayerStats.instance.Damage * 100f) / 100f;
             money -= damagePrice;
             PlayerStats.instance.Money -= damagePrice;
             damagePrice += (int)(priceRate * damagePrice);

@@ -32,6 +32,5 @@ public class PlayerStatsMemory
         regen = data.Regen;
         healthRegenRate = data.HealthRegenRate;
         speed = data.Speed;
-        Debug.LogError("Mam hajsu przy zapisie: " + money);
     }
 }

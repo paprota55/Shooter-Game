@@ -41,6 +41,14 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetKey(KeyCode.M))
+        {
+            PlayerStats.instance.Money += 10000;
+        }
+        if (Input.GetKey(KeyCode.P))
+        {
+            PlayerStats.instance.Score += 10000;
+        }
     }
     
     private void Start()
@@ -146,5 +154,11 @@ public class GameController : MonoBehaviour
     public void SaveData()
     {
         DataManager.SavePlayerStats(PlayerStats.instance);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+            DataManager.SavePlayer(player.transform.position);
+        else
+            DataManager.SavePlayer(spawnPoint.position);
+
     }
 }

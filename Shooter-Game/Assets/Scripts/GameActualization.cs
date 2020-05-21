@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameActualization : MonoBehaviour
 {
     public bool playerStats;
-
+    public bool player;
     private void Start()
     {
         playerStats = false;
@@ -14,7 +14,7 @@ public class GameActualization : MonoBehaviour
 
     private void Update()
     {
-        if(playerStats)
+        if(playerStats&&player)
         {
             Destroy(this.gameObject);
         }
