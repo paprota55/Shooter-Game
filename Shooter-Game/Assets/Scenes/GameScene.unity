@@ -1540,7 +1540,7 @@ MonoBehaviour:
   - {fileID: 1871829539}
   - {fileID: 1663083286}
   - {fileID: 41454850}
-  timeToNextWave: 0
+  timeToNextWave: 3
 --- !u!114 &263069579
 MonoBehaviour:
   m_ObjectHideFlags: 0

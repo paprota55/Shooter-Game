@@ -132,6 +132,7 @@ public class MonsterSpawner : MonoBehaviour
             {
                 if (state == State.COUNT)
                 {
+
                     StartCoroutine(Spawn(wavesList[whichWave]));
                 }
             }
@@ -146,6 +147,7 @@ public class MonsterSpawner : MonoBehaviour
     void arrangementsToNextWave()
     {
         state = State.COUNT;
+        GameController.gm.WaveUI.SetActive(true);
         counterToNextWave = timeToNextWave;
         whichWave += 1;
         if (whichWave  > wavesList.Length - 1)

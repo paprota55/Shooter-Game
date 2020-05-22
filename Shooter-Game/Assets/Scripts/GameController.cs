@@ -29,6 +29,13 @@ public class GameController : MonoBehaviour
 
     [SerializeField]
     private GameObject waveUI;
+    public GameObject WaveUI
+    {
+        get
+        {
+            return waveUI;
+        }
+    }
 
     [SerializeField]
     private GameObject shopUI;
