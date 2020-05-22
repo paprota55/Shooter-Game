@@ -20,7 +20,7 @@ public class GameActualization : MonoBehaviour
 
     private void Update()
     {
-        if(playerStats&&player&&shop)
+        if (playerStats&&player&&shop&&monsterSpawner)
         {
             Destroy(this.gameObject);
         }

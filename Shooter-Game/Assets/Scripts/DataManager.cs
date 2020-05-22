@@ -11,11 +11,12 @@ public static class DataManager
     static string playerPath = Application.persistentDataPath + "/Player.fun";
     static string highscoresPath = Application.persistentDataPath + "/Highscores.fun";
     static string shopPath = Application.persistentDataPath + "/Shop.fun";
+    static string monsterSpawnerPath = Application.persistentDataPath + "/MonsterSpawner.fun";
     static string volumePath = Application.persistentDataPath + "/Volume.fun";
 
     public static bool CheckFilesToLoad()
     {
-        if (File.Exists(playerStatsPath) && File.Exists(playerPath)&&File.Exists(shopPath))
+        if (File.Exists(playerStatsPath) && File.Exists(playerPath)&&File.Exists(shopPath)&&File.Exists(monsterSpawnerPath))
             return true;
 
         return false;
@@ -82,7 +83,36 @@ public static class DataManager
             return null;
         }
     }
+    /// //////////////////////////////////////////////////////
 
+    /// /////////////////MONSTERSPAWNER///////////////////////
+
+
+    public static void SaveMonsterSpawner(MonsterSpawner data, GameObject[] list)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = new FileStream(monsterSpawnerPath, FileMode.Create);
+        MonsterSpawnerMemory memory = new MonsterSpawnerMemory(data, list);
+        formatter.Serialize(stream, memory);
+        stream.Close();
+    }
+
+    public static MonsterSpawnerMemory LoadMonsterSpawner()
+    {
+        if (File.Exists(monsterSpawnerPath))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(monsterSpawnerPath, FileMode.Open);
+            stream.Position = 0;
+            MonsterSpawnerMemory memory = formatter.Deserialize(stream) as MonsterSpawnerMemory;
+            stream.Close();
+            return memory;
+        }
+        else
+        {
+            return null;
+        }
+    }
 
     /// //////////////////////////////////////////////////////
 

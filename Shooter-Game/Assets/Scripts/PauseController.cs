@@ -10,6 +10,11 @@ public class PauseController : MonoBehaviour
     public GameObject shopUI;
     public GameObject menuUI;
     private GameObject player;
+
+    private void Start()
+    {
+        ShopPause();
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.B))

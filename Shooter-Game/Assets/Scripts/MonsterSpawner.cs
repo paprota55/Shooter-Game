@@ -16,24 +16,85 @@ public class Wave
     }
 }
 
+[System.Serializable]
 public enum State { SPAWN, WAIT, COUNT, PAUSE };
 
 public class MonsterSpawner : MonoBehaviour
 {
     private State state = State.COUNT;
+    public State WaveState
+    {
+        get
+        {
+            return state;
+        }
+        set
+        {
+            state = value;
+        }
+    }
     public Wave[] wavesList;
     public GameObject[] spawnPoints;
     private int whichWave = 0;
+    public int WaveNumber
+    {
+        get
+        {
+            return whichWave;
+        }
+        set
+        {
+            whichWave = value;
+        }
+    }
     public float timeToNextWave = 8f;
     private float counterToNextWave;
 
     bool spawn;
+    public bool IfSpawn
+    {
+        get
+        {
+            return spawn;
+        }
+    }
 
     private void Start()
     {
+        GameObject save = GameObject.FindGameObjectWithTag("SavedData");
+        if (save != null)
+        {
+            save.GetComponent<GameActualization>().monsterSpawner = true;
+            LoadData(DataManager.LoadMonsterSpawner());            
+        }
+        else
+        {
+            spawn = true;
+        }
+
         counterToNextWave = timeToNextWave;
-        spawn = true;
     }
+
+    void LoadData(MonsterSpawnerMemory data)
+    {
+        spawn = data.spawn;
+        whichWave = data.whichWave;
+        state = (State)data.state;
+        
+        if(data.enemiesHealth != null)
+        {
+            int j = 0;
+            for (int i = 0; i<data.enemiesHealth.Length;i++)
+            {
+                GameObject newEnemy = Instantiate(wavesList[whichWave].enemy);
+                newEnemy.GetComponent<Enemy>().enemyStats.currentHealth = data.enemiesHealth[i];
+                newEnemy.transform.position = new Vector3(data.positions[j], data.positions[j+1], data.positions[j+2]);
+                j += 3;
+            }
+        }
+    }
+
+
 
     public State getState()
     {
@@ -58,7 +119,6 @@ public class MonsterSpawner : MonoBehaviour
             {
                 if (IsEnemyAlive() == false)
                 {
-
                     arrangementsToNextWave();
                     return;
                 }

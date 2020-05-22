@@ -58,8 +58,9 @@ public class GameController : MonoBehaviour
             gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         }
 
-        playerUI.SetActive(true);
-        enterNameUI.SetActive(false);
+        gm.playerUI.SetActive(true);
+        gm.shopUI.SetActive(false);
+        gm.enterNameUI.SetActive(false);
         AudioManager.manager.Stop(menuMusicName);
         AudioManager.manager.Play(gameMusicName);
     }
@@ -153,7 +154,10 @@ public class GameController : MonoBehaviour
 
     public void SaveData()
     {
+        //Save PlayerStats
         DataManager.SavePlayerStats(PlayerStats.instance);
+
+        //Save Player position
         GameObject data = GameObject.FindGameObjectWithTag("Player");
         if (data != null)
         {
@@ -164,7 +168,7 @@ public class GameController : MonoBehaviour
             DataManager.SavePlayer(spawnPoint.position);
         }
 
-
+        //Save shop prices
         if (shopUI != null)
         {
             DataManager.SaveShop(shopUI.GetComponent<Shop>());
@@ -172,6 +176,13 @@ public class GameController : MonoBehaviour
         else
         {
             DataManager.SaveShop(new Shop());
+        }
+
+        //Save monster spawner state
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");        
+        if(this.GetComponent<MonsterSpawner>() != null)
+        {
+            DataManager.SaveMonsterSpawner(this.GetComponent<MonsterSpawner>(),enemies);
         }
 
 
