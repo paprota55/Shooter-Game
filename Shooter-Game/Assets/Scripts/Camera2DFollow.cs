@@ -23,7 +23,7 @@ namespace UnityStandardAssets._2D
         private Vector3 m_CurrentVelocity;
         private Vector3 m_LookAheadPos;
 
-        // Use this for initialization
+        /// Use this for initialization
         private void Start()
         {
             m_LastTargetPosition = target.position;
@@ -32,7 +32,7 @@ namespace UnityStandardAssets._2D
         }
 
 
-        // Update is called once per frame
+        /// Update is called once per frame
         private void Update()
         {
             if (target == null)
@@ -42,7 +42,7 @@ namespace UnityStandardAssets._2D
 
             else
             {
-                // only update lookahead pos if accelerating or changed direction
+                /// only update lookahead pos if accelerating or changed direction
                 float xMoveDelta = (target.position - m_LastTargetPosition).x;
 
                 bool updateLookAheadTarget = Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold;
@@ -67,6 +67,8 @@ namespace UnityStandardAssets._2D
             }
         }
 
+
+        ///looking for player object and set it in center of camera
         void GetNewPlayer()
         {
             if(searchDelay <= Time.time)

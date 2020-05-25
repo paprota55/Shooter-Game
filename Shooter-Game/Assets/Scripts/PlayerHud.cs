@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+///Class to display information on screen
 public class PlayerHud : MonoBehaviour
 {
+    ///Texts which store information about data from PlayerStats
     [SerializeField]
     private Text ChancesText;
 
@@ -14,7 +16,7 @@ public class PlayerHud : MonoBehaviour
     [SerializeField]
     private Text ScoreText;
 
-    // Update is called once per frame
+    /// Update Text objects
     void Update()
     {
         ChancesText.text = "CHANCES: " + PlayerStats.instance.Chances.ToString();

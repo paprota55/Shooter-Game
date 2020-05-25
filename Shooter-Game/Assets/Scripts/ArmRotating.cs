@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+///Class to move/rotate object (arm with gun)
 public class ArmRotating : MonoBehaviour
 {
+    ///start rotation offset
     public int offset = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
-    // Update is called once per frame
+    ///Rotate arm dependent from mouse position
     void Update()
     {
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);

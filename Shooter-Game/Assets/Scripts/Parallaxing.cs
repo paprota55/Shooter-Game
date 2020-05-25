@@ -5,20 +5,20 @@ using System.Collections;
 public class Parallaxing : MonoBehaviour
 {
 
-    private float[] objectScales;      // how fast move foreground and background sprites according to distance
-    public float transition = 1f;   //how fast transition will be
-    public Transform[] objects;     //Array of foreground and background objects to parallax
+    private float[] objectScales;      /// how fast move foreground and background sprites according to distance
+    public float transition = 1f;   ///how fast transition will be
+    public Transform[] objects;     ///Array of foreground and background objects to parallax
 
-    private Transform camera;       //main camera from game
-    private Vector3 startCameraPosition; //variable to store camera position which will be needed to calculate parallax
+    private Transform camera;       ///main camera from game
+    private Vector3 startCameraPosition; ///variable to store camera position which will be needed to calculate parallax
 
 
     void Awake()
     {
-        camera = Camera.main.transform;     //reference to camera in main scene
+        camera = Camera.main.transform;     ///reference to camera in main scene
     }
 
-    // Start is called before the first frame update
+    /// Initialize objectScales list
     void Start()
     {
         objectScales = new float[objects.Length];
@@ -31,7 +31,7 @@ public class Parallaxing : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    /// Update layer position
     void Update()
     {
         float parallax, objectPosition;

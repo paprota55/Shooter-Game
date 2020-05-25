@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+///Class to storage data from Shop game class
 [System.Serializable]
 public class ShopMemory
 {
@@ -14,6 +15,7 @@ public class ShopMemory
     {
 
     }
+    ///constructor to fill data to save
     public ShopMemory(Shop data)
     {
         healthPrice = data.HealthPrice;

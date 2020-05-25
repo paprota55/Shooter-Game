@@ -1,0 +1,26 @@
+var class_game_controller =
+[
+    [ "_KillEnemy", "class_game_controller.html#a36f0d27d01ca09015aea3b176101b1c8", null ],
+    [ "_KillPlayer", "class_game_controller.html#a804f22805c1f9be98771ae4ff05e2c4a", null ],
+    [ "_WinGame", "class_game_controller.html#a306b12b24023df517b78d99e49c6ec55", null ],
+    [ "EndGame", "class_game_controller.html#aae2a40da417d1896678ede01853b4bb8", null ],
+    [ "KillEnemy", "class_game_controller.html#a108fc484f23c58a3dace98a14bd3399c", null ],
+    [ "KillPlayer", "class_game_controller.html#a30268347643e51202831a67ce433749a", null ],
+    [ "RespawnPlayer", "class_game_controller.html#a971aa50769d46cc078a45370a18d1afd", null ],
+    [ "SaveData", "class_game_controller.html#ac7906df5cf484ba56d91166781571f71", null ],
+    [ "UpdatePlayerStash", "class_game_controller.html#afeda31601712ea7e19085011e3a6fe37", null ],
+    [ "WinGame", "class_game_controller.html#ae0ce96f68532ec85bb233c3459049b9d", null ],
+    [ "deadEffect", "class_game_controller.html#af8d7047883adf3d09abce1e06ac6790f", null ],
+    [ "enemyDeadSound", "class_game_controller.html#afd14349e3e2ff68557797c2a3b77c173", null ],
+    [ "gameMusicName", "class_game_controller.html#adc348233f85d9d2861670ae8cd5c0b3f", null ],
+    [ "gameOverSound", "class_game_controller.html#a9d09994835884f7ff84f909034431609", null ],
+    [ "gm", "class_game_controller.html#ad7586f6965b7297dc06847ab96b40683", null ],
+    [ "menuMusicName", "class_game_controller.html#a6d4dcfdef838b2ec5849cec03c491745", null ],
+    [ "playerDeadSound", "class_game_controller.html#a8031fac12fc344a194e6bc74cb7cf160", null ],
+    [ "playerObject", "class_game_controller.html#a9e21a1f24cb148628265a71973b054b9", null ],
+    [ "spawnEffect", "class_game_controller.html#a89ae08c5ef8076783cc3e12a42d09505", null ],
+    [ "spawnPoint", "class_game_controller.html#ab5c9f00e4899bbd09055846b1e04309f", null ],
+    [ "spawnSound", "class_game_controller.html#a36a9596f5ea04ec39be1ddfe21c1d5ad", null ],
+    [ "timeToSpawn", "class_game_controller.html#a1cbf17186de5f47fd5542b701027ea6a", null ],
+    [ "WaveUI", "class_game_controller.html#a055fa6877ea744ff8f54b6c859509890", null ]
+];

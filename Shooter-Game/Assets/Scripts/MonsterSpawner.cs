@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+///Storage information about wave, how much enemies, which enemies, spawn delay
 [System.Serializable]
 public class Wave
 {
+    ///enemy prefab to spawn
     public GameObject enemy;
+
+    ///how much enemies will be spawn
     public int quantity;
+
+    ///delay to next spawn
     [HideInInspector]
     public float delay = 1.0f;
 
@@ -16,11 +22,14 @@ public class Wave
     }
 }
 
+///Enumerator to select state of spawner - SPAWN actually spawn, WAIT - wait for enemy defeat, COUNT - counting to spawn - PAUSE - game pause
 [System.Serializable]
 public enum State { SPAWN, WAIT, COUNT, PAUSE };
 
+///Class to managment wave spawn
 public class MonsterSpawner : MonoBehaviour
 {
+    ///store state of spawn
     private State state = State.COUNT;
     public State WaveState
     {
@@ -33,8 +42,13 @@ public class MonsterSpawner : MonoBehaviour
             state = value;
         }
     }
+
+    ///List of waves
     public Wave[] wavesList;
+    ///List of enemies spawn points
     public GameObject[] spawnPoints;
+
+    ///store which wave is actually spawned
     private int whichWave = 0;
     public int WaveNumber
     {
@@ -47,9 +61,11 @@ public class MonsterSpawner : MonoBehaviour
             whichWave = value;
         }
     }
+
     public float timeToNextWave = 8f;
     private float counterToNextWave;
 
+    ///If enemies actually live is true
     bool spawn;
     public bool IfSpawn
     {
@@ -59,6 +75,7 @@ public class MonsterSpawner : MonoBehaviour
         }
     }
 
+    ///Method which is called with object create, if "SavedData" object is exsist then load data from file.
     private void Start()
     {
         GameObject save = GameObject.FindGameObjectWithTag("SavedData");
@@ -75,6 +92,7 @@ public class MonsterSpawner : MonoBehaviour
         counterToNextWave = timeToNextWave;
     }
 
+    ///Method which write data from loaded object to this object
     void LoadData(MonsterSpawnerMemory data)
     {
         spawn = data.spawn;
@@ -94,23 +112,13 @@ public class MonsterSpawner : MonoBehaviour
         }
     }
 
-
-
-    public State getState()
-    {
-        return state;
-    }
-
     public float getCounter()
     {
         return counterToNextWave;
     }
 
-    public int getWaveNumber()
-    {
-        return whichWave;
-    }
 
+    ///Update state of spawner
     private void Update()
     {
         if (spawn)
@@ -132,7 +140,7 @@ public class MonsterSpawner : MonoBehaviour
             {
                 if (state == State.COUNT)
                 {
-
+                    GameController.gm.WaveUI.SetActive(true);
                     StartCoroutine(Spawn(wavesList[whichWave]));
                 }
             }
@@ -144,10 +152,10 @@ public class MonsterSpawner : MonoBehaviour
         }
     }
 
+    ///Update data to spawn next wave
     void arrangementsToNextWave()
     {
         state = State.COUNT;
-        GameController.gm.WaveUI.SetActive(true);
         counterToNextWave = timeToNextWave;
         whichWave += 1;
         if (whichWave  > wavesList.Length - 1)
@@ -157,6 +165,7 @@ public class MonsterSpawner : MonoBehaviour
         }
     }
 
+    ///Method check if enemies alive
     bool IsEnemyAlive()
     {
         if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
@@ -166,6 +175,7 @@ public class MonsterSpawner : MonoBehaviour
         return true;
     }
 
+    ///Using spawn method to spawn enemy, has time delay to invoke spawn monster
     IEnumerator Spawn(Wave wave)
     {
         state = State.SPAWN;
@@ -181,6 +191,7 @@ public class MonsterSpawner : MonoBehaviour
         yield break;
     }
 
+    ///Random spawn enemy in one of spawn points 
     private void SpawnEnemy(GameObject _enemy)
     {
         if (spawnPoints.Length > 0)

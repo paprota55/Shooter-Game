@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+
+///Class to storage data from MonsterSpawner game class
 [System.Serializable]
 public class MonsterSpawnerMemory 
 {
+    ///Store enemies positions [x][y][z]
     public float[] positions;
+    ///Store enemies health
     public float[] enemiesHealth;
+    ///Store state of monster spawner WAIT, PAUSE, SPAWN, COUNT
     public int state;
+    ///Store which wave was in game when saved
     public int whichWave;
+    ///Store if actually spawn
     public bool spawn;
 
     public MonsterSpawnerMemory()
@@ -17,6 +24,7 @@ public class MonsterSpawnerMemory
 
     }
 
+    ///2 args constructor to fill data to save
     public MonsterSpawnerMemory(MonsterSpawner data, GameObject[] list)
     {
         state = (int)data.WaveState;

@@ -4,20 +4,26 @@ using UnityEngine;
 using UnityEngine.UI;
 [System.Serializable]
 
+///Additional class which changing colour of text
 public class RandomTextColour : MonoBehaviour
 {
+    ///Text to change colour
     [SerializeField]
     Text waveCounter;
 
+    ///Text to change colour
     [SerializeField]
     Text waveInc;
 
+    ///Monster spawner to get state of spawn
     [SerializeField]
     MonsterSpawner spawner;
 
+    ///Actually time
     public float counterDelay;
     public float IncDelay;
 
+    ///colour change delay
     public float del1 = 1f;
     public float del2 = 3f;
 
@@ -27,9 +33,10 @@ public class RandomTextColour : MonoBehaviour
         IncDelay = 0;
     }
 
+    ///Check if wave state is suitable and time is greater than delay time
     private void Update()
     {
-        if(spawner.getState() == State.COUNT)
+        if(spawner.WaveState == State.COUNT)
         {
             if (counterDelay + del1 < Time.time)
             {
@@ -39,7 +46,7 @@ public class RandomTextColour : MonoBehaviour
 
 
         }
-        if (spawner.getState() == State.SPAWN)
+        if (spawner.WaveState == State.SPAWN)
         {
             if (IncDelay + del2 < Time.time)
             {
@@ -49,6 +56,7 @@ public class RandomTextColour : MonoBehaviour
         }
     }
 
+    ///Change colour of text
     void ChangeColour(Text text)
     {
         text.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));

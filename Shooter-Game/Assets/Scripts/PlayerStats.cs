@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+///Class storage player statistics which is use in game
 public class PlayerStats : MonoBehaviour
 {
+    ///Hold instance of class - Singleton
     public static PlayerStats instance;
     private string _playerName = "NoName";
     public string PlayerName
@@ -135,13 +137,14 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    ///Method which is called with object create, if "SavedData" object is exsist then load data from file
     public void Awake()
     {
         GameObject save = GameObject.FindGameObjectWithTag("SavedData");
         if(save!=null)
         {
             instance = this;
-            instance.SetStats(DataManager.LoadPlayerStats());
+            instance.LoadData(DataManager.LoadPlayerStats());
             save.GetComponent<GameActualization>().playerStats = true;
         }
         else if(instance == null)
@@ -154,12 +157,14 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    ///Method to set current hp
     public void Respawn()
     {
         _currentHealth = _maxHealth;
     }
 
-    private void SetStats(PlayerStatsMemory data)
+    ///Method which write data from loaded object to this object
+    private void LoadData(PlayerStatsMemory data)
     {
         _playerName = data.name;
         _maxHealth = data.maxHealth;

@@ -2,19 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+///Class to pause game and show UI
 public class PauseController : MonoBehaviour
 {
+    ///Variables to store information about UI enable
     private bool isInShop = false;
     private bool isInMenu = false;
 
+    ///UI objects to show/hide UI
     public GameObject shopUI;
     public GameObject menuUI;
+
+    ///player object to enabling disabling shooting
     private GameObject player;
 
     private void Start()
     {
         ShopPause();
     }
+
+    ///Check if user press button B or ESC and run shop or menu
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.B))
@@ -49,6 +56,7 @@ public class PauseController : MonoBehaviour
         }
     }
 
+    ///Hide menu and shop and resume game
     public void Resume()
     {
         isInMenu = false;
@@ -60,6 +68,7 @@ public class PauseController : MonoBehaviour
         EnableShooting();
     }
 
+    ///Disable player shooting
     void DisableShooting()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -69,6 +78,7 @@ public class PauseController : MonoBehaviour
         }
     }
 
+    ///Enable player shooting
     void EnableShooting()
     {
         if (player != null)
@@ -77,6 +87,7 @@ public class PauseController : MonoBehaviour
         }
     }
 
+    ///Pause game and show Shop UI
     void ShopPause()
     {
         isInShop = true;
@@ -85,6 +96,7 @@ public class PauseController : MonoBehaviour
         shopUI.SetActive(isInShop);
     }
 
+    ///Pause game and show menu UI
     void MenuPause()
     {
         isInMenu = true;

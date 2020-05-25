@@ -3,25 +3,35 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
+///Sound class which store information about clip to play
 [System.Serializable]
 public class Sound
 {
+    ///sound name
     public string name;
-    public AudioClip clip;
-    private AudioSource source;
-    public bool loop;
-    bool status;
 
+    ///sound clip which is playing
+    public AudioClip clip;
+
+    ///Source from sound will be broadcast
+    private AudioSource source;
+
+    ///if sound should be repeatable all time
+    public bool loop;
+
+    ///Start playing audio from Clip
     public void Play()
     {
         source.Play();
     }
 
+    ///Stop playing audio
     public void Stop()
     {
         source.Stop();
     }
 
+    ///Set audio source
     public void SetSource(AudioSource audioSource)
     {
         source = audioSource;
@@ -29,11 +39,13 @@ public class Sound
         source.loop = loop;
     }
 
+
     public void SetVolume(float _volume)
     {
         source.volume = _volume;
     }
 
+    ///Check if sound actually is playing
     public bool isPlaying()
     {
         return source.isPlaying;
@@ -41,12 +53,18 @@ public class Sound
 }
 public class AudioManager : MonoBehaviour
 {
+    ///audiomanager instance - singleton project template
     public static AudioManager manager;
 
+    ///List of sounds objects
     [SerializeField]
     public Sound[] soundList;
+
+    ///Volumes
     private float sfxVolume;
     private float musicVolume;
+
+    ///Create reference to manager, use singleton project template, and set not destroy if change scene
     private void Awake()
     {
         if (manager == null)
@@ -63,6 +81,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    ///Create sound objects and set initial volumes, start menu music sound
     private void Start()
     {
         float[] data = DataManager.LoadVolume();
@@ -80,6 +99,7 @@ public class AudioManager : MonoBehaviour
         manager.Play("MenuMusic");
     }
 
+    ///Start playing sound which name is in argument
     public void Play(string name)
     {
         for(int i = 0; i<soundList.Length;i++)
@@ -92,6 +112,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    ///Stop playing sound which name is in argument
     public void Stop(string name)
     {
         for (int i = 0; i < soundList.Length; i++)
@@ -104,6 +125,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    ///Stop all playing sounds
     public void StopAll()
     {
         for (int i = 0; i < soundList.Length; i++)
@@ -114,6 +136,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    ///update sfx volume in all sound objects
     public void UpdateEffectsVolume(float vol)
     {
         for (int i = 0; i < soundList.Length; i++)
@@ -126,6 +149,7 @@ public class AudioManager : MonoBehaviour
         sfxVolume = vol;
     }
 
+    ///update music volume in all sound objects
     public void UpdateMusicVolume(float vol)
     {
         for (int i = 0; i < soundList.Length; i++)
@@ -148,6 +172,7 @@ public class AudioManager : MonoBehaviour
         return musicVolume;
     }
 
+    ///Before destroy save volumes to file
     private void OnDestroy()
     {
         DataManager.SaveVolume(sfxVolume, musicVolume);

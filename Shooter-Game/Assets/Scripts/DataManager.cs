@@ -5,8 +5,10 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System;
 
+///Static class to load/save data to/from file
 public static class DataManager
 {
+    ///File paths
     static string playerStatsPath = Application.persistentDataPath + "/PlayerStats.fun";
     static string playerPath = Application.persistentDataPath + "/Player.fun";
     static string highscoresPath = Application.persistentDataPath + "/Highscores.fun";
@@ -14,6 +16,28 @@ public static class DataManager
     static string monsterSpawnerPath = Application.persistentDataPath + "/MonsterSpawner.fun";
     static string volumePath = Application.persistentDataPath + "/Volume.fun";
 
+
+    ///Delete old files
+    public static void DeleteOldSave()
+    {
+        //player stats
+        if (File.Exists(playerStatsPath))
+            File.Delete(playerStatsPath);
+
+        //player
+        if (File.Exists(playerPath))
+            File.Delete(playerPath);
+
+        //shop
+        if (File.Exists(shopPath))
+            File.Delete(shopPath);
+
+        //monster spawner
+        if (File.Exists(monsterSpawnerPath))
+            File.Delete(monsterSpawnerPath);
+    }
+
+    ///Check if filepaths are good
     public static bool CheckFilesToLoad()
     {
         if (File.Exists(playerStatsPath) && File.Exists(playerPath)&&File.Exists(shopPath)&&File.Exists(monsterSpawnerPath))
@@ -21,11 +45,8 @@ public static class DataManager
 
         return false;
     }
-     
-    /// //////////////////////////////////////////////////////
 
-    /// /////////////////SHOP/////////////////////////////////
-
+    ///Save shop data to file
     public static void SaveShop(Shop data)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -35,6 +56,7 @@ public static class DataManager
         stream.Close();
     }
 
+    ///Load shop data from file
     public static ShopMemory LoadShop()
     {
         if (File.Exists(shopPath))
@@ -52,12 +74,7 @@ public static class DataManager
         }
     }
 
-
-
-    /// //////////////////////////////////////////////////////
-
-    /// /////////////////PLAYER///////////////////////////////
-
+    ///Save player data to file
     public static void SavePlayer(Vector3 data)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -67,6 +84,7 @@ public static class DataManager
         stream.Close();
     }
 
+    ///Load player data from file
     public static PlayerMemory LoadPlayer()
     {
         if (File.Exists(playerPath))
@@ -83,11 +101,8 @@ public static class DataManager
             return null;
         }
     }
-    /// //////////////////////////////////////////////////////
 
-    /// /////////////////MONSTERSPAWNER///////////////////////
-
-
+    ///Save monsterspawner data to file
     public static void SaveMonsterSpawner(MonsterSpawner data, GameObject[] list)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -97,6 +112,7 @@ public static class DataManager
         stream.Close();
     }
 
+    ///Load monsterspawner data from file
     public static MonsterSpawnerMemory LoadMonsterSpawner()
     {
         if (File.Exists(monsterSpawnerPath))
@@ -113,10 +129,8 @@ public static class DataManager
             return null;
         }
     }
-
-    /// //////////////////////////////////////////////////////
-
-    /// /////////////////PLAYERSTATS//////////////////////////
+    
+    ///Save playerstats data to file
     public static void SavePlayerStats(PlayerStats data)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -126,6 +140,7 @@ public static class DataManager
         stream.Close();
     }
 
+    ///Load playerstats data from file
     public static PlayerStatsMemory LoadPlayerStats()
     {
         if (File.Exists(playerStatsPath))
@@ -142,9 +157,8 @@ public static class DataManager
             return null;
         }
     }
-    /// /////////////////////////////////////////////////////
-
-    /// /////////////////VOLUME//////////////////////////////
+    
+    ///Save volume data to file
     public static void SaveVolume(float effect, float music)
     {
         float[] data = new float[2];
@@ -152,12 +166,12 @@ public static class DataManager
         data[1] = music;
 
         BinaryFormatter formatter = new BinaryFormatter();
-        //string path = Application.persistentDataPath + "/Volume.fun";
         FileStream stream = new FileStream(volumePath, FileMode.Create);
         formatter.Serialize(stream, data);
         stream.Close();
     }
 
+    ///Load volume data from file
     public static float[] LoadVolume()
     {
         //string path = Application.persistentDataPath + "/Volume.fun";
@@ -179,18 +193,17 @@ public static class DataManager
 
         return data;
     }
-    /// ////////////////////////////////////////////////////
 
-    /// /////////////////HIGHSCORE//////////////////////////
-
+    ///Write new record to highscores and save to file
     public static void SaveNewHighscore(int score, string name)
     {
-        Highscores table = LoadHighscores();
+        HighscoresMemory table = LoadHighscores();
         table.UpdateResults(score, name);
         SaveHighscoreObject(table);
     }
 
-    private static void SaveHighscoreObject(Highscores data)
+    ///Save highscores data to file
+    private static void SaveHighscoreObject(HighscoresMemory data)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         //string path = Application.persistentDataPath + "/Highscores.fun";
@@ -199,21 +212,22 @@ public static class DataManager
         stream.Close();
     }
 
-    public static Highscores LoadHighscores()
+    ///Load highscores data from file
+    public static HighscoresMemory LoadHighscores()
     {
         //string path = Application.persistentDataPath + "/Highscores.fun";
-        Highscores data;
+        HighscoresMemory data;
         if (File.Exists(highscoresPath))
         {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(highscoresPath, FileMode.Open);
             stream.Position = 0;
-            data = formatter.Deserialize(stream) as Highscores;
+            data = formatter.Deserialize(stream) as HighscoresMemory;
             stream.Close();
         }
         else
         {
-            data = new Highscores();
+            data = new HighscoresMemory();
             data.AddNoName();
             SaveHighscoreObject(data);
         }
@@ -221,5 +235,4 @@ public static class DataManager
         return data;
     }
 
-    /// ////////////////////////////////////////////////////
 }

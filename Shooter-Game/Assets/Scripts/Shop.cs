@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+///Class to managemement shop system and shop UI
 public class Shop : MonoBehaviour
 {
+    ///Texts to display information on screen
     public Text moneyText;
     public Text healthText;
     public Text speedText;
@@ -69,7 +71,8 @@ public class Shop : MonoBehaviour
     private float damageRate = 0.1f;
     private int chanceRate = 1;
 
-    private void Start()
+    ///Method which is called with object create, if "SavedData" object is exsist then load data from file
+    private void Awake()
     {
         GameObject save = GameObject.FindGameObjectWithTag("SavedData");
         if (save != null)
@@ -87,6 +90,8 @@ public class Shop : MonoBehaviour
 
     }
 
+
+    ///Method which is called once per frame, update information on screen
     private void Update()
     {
         money = PlayerStats.instance.Money;
@@ -101,6 +106,8 @@ public class Shop : MonoBehaviour
         chancePriceText.text = chancePrice.ToString();
     }
 
+
+    ///Method which update PlayerStats object and information from this class, increase health price and update max health field in PlayerStats
     public void BuyHealth()
     {
         if(money >= healthPrice)
@@ -112,6 +119,7 @@ public class Shop : MonoBehaviour
         }
     }
 
+    ///Method which update PlayerStats object and information from this class, increase speed price and update speed field in PlayerStats
     public void BuySpeed()
     {
         if (money >= speedPrice)
@@ -124,6 +132,7 @@ public class Shop : MonoBehaviour
         }
     }
 
+    ///Method which update PlayerStats object and information from this class, increase chance price and update chances field in PlayerStats
     public void BuyChance()
     {
         if (money >= chancePrice)
@@ -135,6 +144,7 @@ public class Shop : MonoBehaviour
         }
     }
 
+    ///Method which update PlayerStats object and information from this class, increase damage price and update damage field in PlayerStats
     public void BuyDamage()
     {
         if (money >= damagePrice)
@@ -147,6 +157,7 @@ public class Shop : MonoBehaviour
         }
     }
 
+    ///Method which write data from loaded object to this object
     void LoadData(ShopMemory data)
     {
         healthPrice = data.healthPrice;
