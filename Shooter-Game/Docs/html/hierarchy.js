@@ -237,6 +237,8 @@ var hierarchy =
       [ "Bullet", "class_bullet.html", null ],
       [ "EndGameUI", "class_end_game_u_i.html", null ],
       [ "Enemy", "class_enemy.html", null ],
+      [ "EnemyBullet", "class_enemy_bullet.html", null ],
+      [ "EnemyShoot", "class_enemy_shoot.html", null ],
       [ "EventSystemChecker", "class_event_system_checker.html", null ],
       [ "GameActualization", "class_game_actualization.html", null ],
       [ "GameController", "class_game_controller.html", null ],

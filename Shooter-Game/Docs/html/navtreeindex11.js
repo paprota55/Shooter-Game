@@ -1,5 +1,14 @@
 var NAVTREEINDEX11 =
 {
+"class_unity_standard_assets_1_1_cross_platform_input_1_1_platform_specific_1_1_mobile_input.html#a2736a0b9d786fa766fbce1379814b58d":[2,0,1,3,1,0,9],
+"class_unity_standard_assets_1_1_cross_platform_input_1_1_platform_specific_1_1_mobile_input.html#a4a4fe09e6913d9a1396d8efac1c166a5":[2,0,1,3,1,0,8],
+"class_unity_standard_assets_1_1_cross_platform_input_1_1_platform_specific_1_1_mobile_input.html#a62844904d698bdeb2a5305d3ddd1a3f0":[2,0,1,3,1,0,5],
+"class_unity_standard_assets_1_1_cross_platform_input_1_1_platform_specific_1_1_mobile_input.html#a8bf6e39ee25d772a7ee72ab9ea04b50b":[2,0,1,3,1,0,2],
+"class_unity_standard_assets_1_1_cross_platform_input_1_1_platform_specific_1_1_mobile_input.html#aa80b3a8e7565ebc452fe3d304dba52a0":[2,0,1,3,1,0,6],
+"class_unity_standard_assets_1_1_cross_platform_input_1_1_platform_specific_1_1_mobile_input.html#aa8563558050d14bdec8b9e1ceae8464c":[2,0,1,3,1,0,3],
+"class_unity_standard_assets_1_1_cross_platform_input_1_1_platform_specific_1_1_mobile_input.html#ab85ef8caaf3f7346d06f75c22cb98b73":[2,0,1,3,1,0,4],
+"class_unity_standard_assets_1_1_cross_platform_input_1_1_platform_specific_1_1_standalone_input.html":[2,0,1,3,1,1],
+"class_unity_standard_assets_1_1_cross_platform_input_1_1_platform_specific_1_1_standalone_input.html#a045d6d8118178037cca1552c087f4598":[2,0,1,3,1,1,7],
 "class_unity_standard_assets_1_1_cross_platform_input_1_1_platform_specific_1_1_standalone_input.html#a1597873a4a9309a388a3e9239e2632d7":[2,0,1,3,1,1,5],
 "class_unity_standard_assets_1_1_cross_platform_input_1_1_platform_specific_1_1_standalone_input.html#a18dc43a362728639b76870ef6e141576":[2,0,1,3,1,1,4],
 "class_unity_standard_assets_1_1_cross_platform_input_1_1_platform_specific_1_1_standalone_input.html#a56ecd8af7bf3e3d66fd1a171ad59343b":[2,0,1,3,1,1,9],
@@ -240,14 +249,5 @@ var NAVTREEINDEX11 =
 "class_unity_standard_assets_1_1_vehicles_1_1_aeroplane_1_1_aeroplane_audio_1_1_advanced_setttings.html#a8acf13328c82286c9f1ea4e3b60d8bce":[2,0,1,6,0,1,0,7],
 "class_unity_standard_assets_1_1_vehicles_1_1_aeroplane_1_1_aeroplane_audio_1_1_advanced_setttings.html#abb1b523aa7ca76df88795e66702b8ff9":[2,0,1,6,0,1,0,5],
 "class_unity_standard_assets_1_1_vehicles_1_1_aeroplane_1_1_aeroplane_audio_1_1_advanced_setttings.html#abbedd0b76186e5a8e775b538f5b5ffb1":[2,0,1,6,0,1,0,1],
-"class_unity_standard_assets_1_1_vehicles_1_1_aeroplane_1_1_aeroplane_audio_1_1_advanced_setttings.html#af26faf763a289a5a2be49d41db428228":[2,0,1,6,0,1,0,2],
-"class_unity_standard_assets_1_1_vehicles_1_1_aeroplane_1_1_aeroplane_control_surface_animator.html":[2,0,1,6,0,3],
-"class_unity_standard_assets_1_1_vehicles_1_1_aeroplane_1_1_aeroplane_control_surface_animator_1_1_control_surface.html":[2,0,1,6,0,3,0],
-"class_unity_standard_assets_1_1_vehicles_1_1_aeroplane_1_1_aeroplane_control_surface_animator_1_1_control_surface.html#a0ae84694a2093141afaac7be2a2c0c8b":[2,0,1,6,0,3,0,2],
-"class_unity_standard_assets_1_1_vehicles_1_1_aeroplane_1_1_aeroplane_control_surface_animator_1_1_control_surface.html#a14f076efa2fdde74c9f68ee7f74f9a08":[2,0,1,6,0,3,0,0],
-"class_unity_standard_assets_1_1_vehicles_1_1_aeroplane_1_1_aeroplane_control_surface_animator_1_1_control_surface.html#a14f076efa2fdde74c9f68ee7f74f9a08a4c6c75325f0405158b6142a861ff4a7f":[2,0,1,6,0,3,0,0,3],
-"class_unity_standard_assets_1_1_vehicles_1_1_aeroplane_1_1_aeroplane_control_surface_animator_1_1_control_surface.html#a14f076efa2fdde74c9f68ee7f74f9a08a6a0d88307d9f7c04ed8e739ebfecf387":[2,0,1,6,0,3,0,0,0],
-"class_unity_standard_assets_1_1_vehicles_1_1_aeroplane_1_1_aeroplane_control_surface_animator_1_1_control_surface.html#a14f076efa2fdde74c9f68ee7f74f9a08a963695ded6583fecdbda7392e973ac6c":[2,0,1,6,0,3,0,0,1],
-"class_unity_standard_assets_1_1_vehicles_1_1_aeroplane_1_1_aeroplane_control_surface_animator_1_1_control_surface.html#a14f076efa2fdde74c9f68ee7f74f9a08a964e1f101fb1154d6e1c6730dc717c32":[2,0,1,6,0,3,0,0,4],
-"class_unity_standard_assets_1_1_vehicles_1_1_aeroplane_1_1_aeroplane_control_surface_animator_1_1_control_surface.html#a14f076efa2fdde74c9f68ee7f74f9a08acf26b425d1fd88dce3c88e9f726b88f6":[2,0,1,6,0,3,0,0,2]
+"class_unity_standard_assets_1_1_vehicles_1_1_aeroplane_1_1_aeroplane_audio_1_1_advanced_setttings.html#af26faf763a289a5a2be49d41db428228":[2,0,1,6,0,1,0,2]
 };

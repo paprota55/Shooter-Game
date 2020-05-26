@@ -92,6 +92,9 @@ $(document).ready(function(){initNavTree('class_game_controller.html',''); initR
 <div class="title">GameController Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Game master to management game.  
+ <a href="class_game_controller.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GameController:</div>
 <div class="dyncontent">
@@ -102,42 +105,58 @@ Inheritance diagram for GameController:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a804f22805c1f9be98771ae4ff05e2c4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#a804f22805c1f9be98771ae4ff05e2c4a">_KillPlayer</a> (<a class="el" href="class_player.html">Player</a> _player)</td></tr>
+<tr class="memdesc:a804f22805c1f9be98771ae4ff05e2c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroy player object, manipulate playerstats, create instance of dead effect and play dead sound, if lives are greater than 0 create new instance of player object  <a href="class_game_controller.html#a804f22805c1f9be98771ae4ff05e2c4a">More...</a><br /></td></tr>
 <tr class="separator:a804f22805c1f9be98771ae4ff05e2c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36f0d27d01ca09015aea3b176101b1c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#a36f0d27d01ca09015aea3b176101b1c8">_KillEnemy</a> (<a class="el" href="class_enemy.html">Enemy</a> _enemy)</td></tr>
+<tr class="memdesc:a36f0d27d01ca09015aea3b176101b1c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroy enemy object, create instance of dead effect and play dead sound  <a href="class_game_controller.html#a36f0d27d01ca09015aea3b176101b1c8">More...</a><br /></td></tr>
 <tr class="separator:a36f0d27d01ca09015aea3b176101b1c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afeda31601712ea7e19085011e3a6fe37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#afeda31601712ea7e19085011e3a6fe37">UpdatePlayerStash</a> (<a class="el" href="class_enemy.html">Enemy</a> _enemy)</td></tr>
+<tr class="memdesc:afeda31601712ea7e19085011e3a6fe37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update money and score in player stats depending on the values in enemy object.  <a href="class_game_controller.html#afeda31601712ea7e19085011e3a6fe37">More...</a><br /></td></tr>
 <tr class="separator:afeda31601712ea7e19085011e3a6fe37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae2a40da417d1896678ede01853b4bb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#aae2a40da417d1896678ede01853b4bb8">EndGame</a> ()</td></tr>
+<tr class="memdesc:aae2a40da417d1896678ede01853b4bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start music, update score in playerStats and show endGameUI and enterNameUI.  <a href="class_game_controller.html#aae2a40da417d1896678ede01853b4bb8">More...</a><br /></td></tr>
 <tr class="separator:aae2a40da417d1896678ede01853b4bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a306b12b24023df517b78d99e49c6ec55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#a306b12b24023df517b78d99e49c6ec55">_WinGame</a> ()</td></tr>
+<tr class="memdesc:a306b12b24023df517b78d99e49c6ec55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start music, update score in playerStats and show winGameUI and enterNameUI.  <a href="class_game_controller.html#a306b12b24023df517b78d99e49c6ec55">More...</a><br /></td></tr>
 <tr class="separator:a306b12b24023df517b78d99e49c6ec55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a971aa50769d46cc078a45370a18d1afd"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#a971aa50769d46cc078a45370a18d1afd">RespawnPlayer</a> ()</td></tr>
+<tr class="memdesc:a971aa50769d46cc078a45370a18d1afd"><td class="mdescLeft">&#160;</td><td class="mdescRight">After time to spawn player, create instance of player object, instance of spawn effect.  <a href="class_game_controller.html#a971aa50769d46cc078a45370a18d1afd">More...</a><br /></td></tr>
 <tr class="separator:a971aa50769d46cc078a45370a18d1afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7906df5cf484ba56d91166781571f71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#ac7906df5cf484ba56d91166781571f71">SaveData</a> ()</td></tr>
+<tr class="memdesc:ac7906df5cf484ba56d91166781571f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save data to files. Check game data and save it to files.  <a href="class_game_controller.html#ac7906df5cf484ba56d91166781571f71">More...</a><br /></td></tr>
 <tr class="separator:ac7906df5cf484ba56d91166781571f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a30268347643e51202831a67ce433749a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#a30268347643e51202831a67ce433749a">KillPlayer</a> (<a class="el" href="class_player.html">Player</a> player)</td></tr>
+<tr class="memdesc:a30268347643e51202831a67ce433749a"><td class="mdescLeft">&#160;</td><td class="mdescRight">static method to kill player  <a href="class_game_controller.html#a30268347643e51202831a67ce433749a">More...</a><br /></td></tr>
 <tr class="separator:a30268347643e51202831a67ce433749a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a108fc484f23c58a3dace98a14bd3399c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#a108fc484f23c58a3dace98a14bd3399c">KillEnemy</a> (<a class="el" href="class_enemy.html">Enemy</a> enemy)</td></tr>
+<tr class="memdesc:a108fc484f23c58a3dace98a14bd3399c"><td class="mdescLeft">&#160;</td><td class="mdescRight">static method to kill enemy  <a href="class_game_controller.html#a108fc484f23c58a3dace98a14bd3399c">More...</a><br /></td></tr>
 <tr class="separator:a108fc484f23c58a3dace98a14bd3399c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0ce96f68532ec85bb233c3459049b9d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#ae0ce96f68532ec85bb233c3459049b9d">WinGame</a> ()</td></tr>
+<tr class="memdesc:ae0ce96f68532ec85bb233c3459049b9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">static method to show win game  <a href="class_game_controller.html#ae0ce96f68532ec85bb233c3459049b9d">More...</a><br /></td></tr>
 <tr class="separator:ae0ce96f68532ec85bb233c3459049b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ab5c9f00e4899bbd09055846b1e04309f"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#ab5c9f00e4899bbd09055846b1e04309f">spawnPoint</a></td></tr>
+<tr class="memdesc:ab5c9f00e4899bbd09055846b1e04309f"><td class="mdescLeft">&#160;</td><td class="mdescRight">player spawn point  <a href="class_game_controller.html#ab5c9f00e4899bbd09055846b1e04309f">More...</a><br /></td></tr>
 <tr class="separator:ab5c9f00e4899bbd09055846b1e04309f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e21a1f24cb148628265a71973b054b9"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#a9e21a1f24cb148628265a71973b054b9">playerObject</a></td></tr>
+<tr class="memdesc:a9e21a1f24cb148628265a71973b054b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">player prefab object  <a href="class_game_controller.html#a9e21a1f24cb148628265a71973b054b9">More...</a><br /></td></tr>
 <tr class="separator:a9e21a1f24cb148628265a71973b054b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89ae08c5ef8076783cc3e12a42d09505"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#a89ae08c5ef8076783cc3e12a42d09505">spawnEffect</a></td></tr>
+<tr class="memdesc:a89ae08c5ef8076783cc3e12a42d09505"><td class="mdescLeft">&#160;</td><td class="mdescRight">particle system - spawn animation  <a href="class_game_controller.html#a89ae08c5ef8076783cc3e12a42d09505">More...</a><br /></td></tr>
 <tr class="separator:a89ae08c5ef8076783cc3e12a42d09505"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8d7047883adf3d09abce1e06ac6790f"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#af8d7047883adf3d09abce1e06ac6790f">deadEffect</a></td></tr>
+<tr class="memdesc:af8d7047883adf3d09abce1e06ac6790f"><td class="mdescLeft">&#160;</td><td class="mdescRight">particle system - dead animation  <a href="class_game_controller.html#af8d7047883adf3d09abce1e06ac6790f">More...</a><br /></td></tr>
 <tr class="separator:af8d7047883adf3d09abce1e06ac6790f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cbf17186de5f47fd5542b701027ea6a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#a1cbf17186de5f47fd5542b701027ea6a">timeToSpawn</a> = 3</td></tr>
+<tr class="memdesc:a1cbf17186de5f47fd5542b701027ea6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">time to player spawn after death - in seconds  <a href="class_game_controller.html#a1cbf17186de5f47fd5542b701027ea6a">More...</a><br /></td></tr>
 <tr class="separator:a1cbf17186de5f47fd5542b701027ea6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc348233f85d9d2861670ae8cd5c0b3f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#adc348233f85d9d2861670ae8cd5c0b3f">gameMusicName</a> = &quot;GameMusic&quot;</td></tr>
+<tr class="memdesc:adc348233f85d9d2861670ae8cd5c0b3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">sounds names  <a href="class_game_controller.html#adc348233f85d9d2861670ae8cd5c0b3f">More...</a><br /></td></tr>
 <tr class="separator:adc348233f85d9d2861670ae8cd5c0b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d4dcfdef838b2ec5849cec03c491745"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#a6d4dcfdef838b2ec5849cec03c491745">menuMusicName</a> = &quot;MenuMusic&quot;</td></tr>
 <tr class="separator:a6d4dcfdef838b2ec5849cec03c491745"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,6 +172,7 @@ Public Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:ad7586f6965b7297dc06847ab96b40683"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_game_controller.html">GameController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#ad7586f6965b7297dc06847ab96b40683">gm</a></td></tr>
+<tr class="memdesc:ad7586f6965b7297dc06847ab96b40683"><td class="mdescLeft">&#160;</td><td class="mdescRight">instance of controller - singleton project template  <a href="class_game_controller.html#ad7586f6965b7297dc06847ab96b40683">More...</a><br /></td></tr>
 <tr class="separator:ad7586f6965b7297dc06847ab96b40683"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -160,7 +180,9 @@ Properties</h2></td></tr>
 <tr class="memitem:a055fa6877ea744ff8f54b6c859509890"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_controller.html#a055fa6877ea744ff8f54b6c859509890">WaveUI</a><code> [get]</code></td></tr>
 <tr class="separator:a055fa6877ea744ff8f54b6c859509890"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Game master to management game. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a36f0d27d01ca09015aea3b176101b1c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a36f0d27d01ca09015aea3b176101b1c8">&#9670;&nbsp;</a></span>_KillEnemy()</h2>
 
@@ -176,6 +198,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>destroy enemy object, create instance of dead effect and play dead sound </p>
 
 </div>
 </div>
@@ -195,6 +219,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>destroy player object, manipulate playerstats, create instance of dead effect and play dead sound, if lives are greater than 0 create new instance of player object </p>
+
 </div>
 </div>
 <a id="a306b12b24023df517b78d99e49c6ec55"></a>
@@ -212,6 +238,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Start music, update score in playerStats and show winGameUI and enterNameUI. </p>
+
 </div>
 </div>
 <a id="aae2a40da417d1896678ede01853b4bb8"></a>
@@ -228,6 +256,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Start music, update score in playerStats and show endGameUI and enterNameUI. </p>
 
 </div>
 </div>
@@ -255,6 +285,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>static method to kill enemy </p>
+
 </div>
 </div>
 <a id="a30268347643e51202831a67ce433749a"></a>
@@ -281,6 +313,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>static method to kill player </p>
+
 </div>
 </div>
 <a id="a971aa50769d46cc078a45370a18d1afd"></a>
@@ -297,6 +331,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>After time to spawn player, create instance of player object, instance of spawn effect. </p>
 
 </div>
 </div>
@@ -315,6 +351,12 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Save data to files. Check game data and save it to files. </p>
+<p>Save <a class="el" href="class_player_stats.html" title="Class storage player statistics which is use in game.">PlayerStats</a></p>
+<p>Save <a class="el" href="class_player.html" title="Class to manipulate player object.">Player</a> position</p>
+<p>Save shop prices</p>
+<p>Save monster spawner state</p>
+
 </div>
 </div>
 <a id="afeda31601712ea7e19085011e3a6fe37"></a>
@@ -332,6 +374,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Update money and score in player stats depending on the values in enemy object. </p>
 
 </div>
 </div>
@@ -358,6 +402,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>static method to show win game </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -372,6 +418,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>particle system - dead animation </p>
 
 </div>
 </div>
@@ -400,6 +448,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>sounds names </p>
 
 </div>
 </div>
@@ -436,6 +486,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>instance of controller - singleton project template </p>
 
 </div>
 </div>
@@ -479,6 +531,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>player prefab object </p>
+
 </div>
 </div>
 <a id="a89ae08c5ef8076783cc3e12a42d09505"></a>
@@ -493,6 +547,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>particle system - spawn animation </p>
+
 </div>
 </div>
 <a id="ab5c9f00e4899bbd09055846b1e04309f"></a>
@@ -506,6 +562,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>player spawn point </p>
 
 </div>
 </div>
@@ -534,6 +592,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>time to player spawn after death - in seconds </p>
 
 </div>
 </div>
@@ -569,7 +629,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_game_controller.html">GameController</a></li>
-    <li class="footer">Generated on Mon May 25 2020 18:00:59 for Shooter-Game by
+    <li class="footer">Generated on Tue May 26 2020 10:45:31 for Shooter-Game by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>

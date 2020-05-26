@@ -1,5 +1,14 @@
 var NAVTREEINDEX4 =
 {
+"class_pathfinding_1_1_astar_profiler.html#af8fa6b8d75250ae32616d5cdc57c1ab3":[2,0,0,19,4],
+"class_pathfinding_1_1_astar_profiler_1_1_profile_point.html":[2,0,0,19,0],
+"class_pathfinding_1_1_astar_profiler_1_1_profile_point.html#a0ed3a242a1d6157798988316878d47a5":[2,0,0,19,0,2],
+"class_pathfinding_1_1_astar_profiler_1_1_profile_point.html#a4fe04416bbd057d8f1a92869085d4bda":[2,0,0,19,0,1],
+"class_pathfinding_1_1_astar_profiler_1_1_profile_point.html#a733454c7a552c3b70bb7f21803d6c8a0":[2,0,0,19,0,3],
+"class_pathfinding_1_1_astar_profiler_1_1_profile_point.html#af1188335efd4ea4c9211350e3a2e5ef1":[2,0,0,19,0,0],
+"class_pathfinding_1_1_astar_splines.html":[2,0,0,20],
+"class_pathfinding_1_1_astar_splines.html#a0eedb63e611663b1a68a3358be25b51e":[2,0,0,20,0],
+"class_pathfinding_1_1_astar_splines.html#a6faf5dd964a4fe02f6b0b1da0092b748":[2,0,0,20,1],
 "class_pathfinding_1_1_astar_splines.html#a7c5a20422e9550f0e9243961306aeeba":[2,0,0,20,3],
 "class_pathfinding_1_1_astar_splines.html#aea6a58ece3b0769af0b14a6d1dc75158":[2,0,0,20,2],
 "class_pathfinding_1_1_astar_update_checker.html":[2,0,0,21],
@@ -240,14 +249,5 @@ var NAVTREEINDEX4 =
 "class_pathfinding_1_1_graph_modifier.html#acb195bc471fa7fa4509fb11326ee11cb":[2,0,0,45,4],
 "class_pathfinding_1_1_graph_modifier.html#ad8c8af5aab6f04f280251808558f89d7":[2,0,0,45,6],
 "class_pathfinding_1_1_graph_modifier.html#ae670bdb303bee98e9efc94bab57230cf":[2,0,0,45,11],
-"class_pathfinding_1_1_graph_modifier.html#ae7c4db61a3f3c937872bce039dade7d3":[2,0,0,45,0],
-"class_pathfinding_1_1_graph_modifier.html#ae7c4db61a3f3c937872bce039dade7d3a0049b9673c6aa7d64acbe5b1cf962251":[2,0,0,45,0,0],
-"class_pathfinding_1_1_graph_modifier.html#ae7c4db61a3f3c937872bce039dade7d3a4d6938dc46ac97dde005fab44a01386c":[2,0,0,45,0,3],
-"class_pathfinding_1_1_graph_modifier.html#ae7c4db61a3f3c937872bce039dade7d3a509bbd6a2f4d5a35d025a0eadbdc54a6":[2,0,0,45,0,2],
-"class_pathfinding_1_1_graph_modifier.html#ae7c4db61a3f3c937872bce039dade7d3a85a764148f5bf9d261b4944d752ca23a":[2,0,0,45,0,5],
-"class_pathfinding_1_1_graph_modifier.html#ae7c4db61a3f3c937872bce039dade7d3ac88f8f4a823ce01d7401557e4d8d6115":[2,0,0,45,0,1],
-"class_pathfinding_1_1_graph_modifier.html#ae7c4db61a3f3c937872bce039dade7d3ad1265336b66d91a1fc4f5904e34591f4":[2,0,0,45,0,4],
-"class_pathfinding_1_1_graph_modifier.html#af763052c27ec65a88b1e79784ac80b30":[2,0,0,45,9],
-"class_pathfinding_1_1_graph_node.html":[2,0,0,46],
-"class_pathfinding_1_1_graph_node.html#a0a6a15c6977f267eec85fec23613ab35":[2,0,0,46,8]
+"class_pathfinding_1_1_graph_modifier.html#ae7c4db61a3f3c937872bce039dade7d3":[2,0,0,45,0]
 };

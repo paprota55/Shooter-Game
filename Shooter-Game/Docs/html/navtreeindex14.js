@@ -1,5 +1,14 @@
 var NAVTREEINDEX14 =
 {
+"struct_pathfinding_1_1_connection.html#ac608ffaf1d8f06912fe78600a2e1ddfd":[2,0,0,28,5],
+"struct_pathfinding_1_1_connection.html#af316db9c3d87577da84c96009a0e6792":[2,0,0,28,1],
+"struct_pathfinding_1_1_funnel_1_1_funnel_portals.html":[2,0,0,38,0],
+"struct_pathfinding_1_1_funnel_1_1_funnel_portals.html#a226aa868730d1861f5bc8b98ebbff758":[2,0,0,38,0,1],
+"struct_pathfinding_1_1_funnel_1_1_funnel_portals.html#a8909dffc6c930ac1163bf27b36be950f":[2,0,0,38,0,0],
+"struct_pathfinding_1_1_funnel_1_1_path_part.html":[2,0,0,38,1],
+"struct_pathfinding_1_1_funnel_1_1_path_part.html#a018f0a05e6d4971e836ec68f9b55c974":[2,0,0,38,1,1],
+"struct_pathfinding_1_1_funnel_1_1_path_part.html#a4462bde2ed9585d7e0114cd840ed0b1e":[2,0,0,38,1,4],
+"struct_pathfinding_1_1_funnel_1_1_path_part.html#a569f85e0811b725fff73b2949a2862c6":[2,0,0,38,1,3],
 "struct_pathfinding_1_1_funnel_1_1_path_part.html#a69b61084e5bd17379f3c819aa1bce93e":[2,0,0,38,1,2],
 "struct_pathfinding_1_1_funnel_1_1_path_part.html#ab4ccb021c88ac8738617e47e9ccf79e3":[2,0,0,38,1,0],
 "struct_pathfinding_1_1_graph_hit_info.html":[2,0,0,43],

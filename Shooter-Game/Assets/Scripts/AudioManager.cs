@@ -51,6 +51,9 @@ public class Sound
         return source.isPlaying;
     }
 }
+
+
+/// Manage playing sounds in game
 public class AudioManager : MonoBehaviour
 {
     ///audiomanager instance - singleton project template

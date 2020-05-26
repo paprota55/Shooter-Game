@@ -1,10 +1,10 @@
 var searchData=
 [
   ['d_416',['d',['../class_pathfinding_1_1_navmesh_tile.html#a5d84820f1c2cf57e08672867db1ed193',1,'Pathfinding::NavmeshTile']]],
-  ['damage_417',['Damage',['../class_player_stats.html#a2fbf3b699a95e9e459391018f5ed818c',1,'PlayerStats.Damage()'],['../class_bullet.html#a7a07b8d87c70896760d578385d7c2eab',1,'Bullet.damage()'],['../class_enemy_stats.html#a24ae83098dd4b61f1afcd781183b8ecc',1,'EnemyStats.damage()'],['../class_player_stats_memory.html#a1a90b34533cc41a2f429c73e4c6cda80',1,'PlayerStatsMemory.damage()']]],
+  ['damage_417',['Damage',['../class_player_stats.html#a2fbf3b699a95e9e459391018f5ed818c',1,'PlayerStats.Damage()'],['../class_bullet.html#a7a07b8d87c70896760d578385d7c2eab',1,'Bullet.damage()'],['../class_enemy_stats.html#a24ae83098dd4b61f1afcd781183b8ecc',1,'EnemyStats.damage()'],['../class_enemy_bullet.html#a5348a8551af35071783af8d4072fb526',1,'EnemyBullet.damage()'],['../class_player_stats_memory.html#a1a90b34533cc41a2f429c73e4c6cda80',1,'PlayerStatsMemory.damage()']]],
   ['damageenemy_418',['DamageEnemy',['../class_enemy.html#a5953b41af65c78ba6c776469f3824e71',1,'Enemy']]],
   ['damageplayer_419',['DamagePlayer',['../class_player.html#a9859f48b83dc3d2b8717b5649f5a8bfd',1,'Player']]],
-  ['damageprice_420',['DamagePrice',['../class_shop.html#adfd7f5176ddb1b406d8be076ca2685a8',1,'Shop.DamagePrice()'],['../class_shop_memory.html#a16e6e646d0e10035324bd0ad374ee6b6',1,'ShopMemory.damagePrice()']]],
+  ['damageprice_420',['damagePrice',['../class_shop_memory.html#a16e6e646d0e10035324bd0ad374ee6b6',1,'ShopMemory.damagePrice()'],['../class_shop.html#adfd7f5176ddb1b406d8be076ca2685a8',1,'Shop.DamagePrice()']]],
   ['damagepricetext_421',['damagePriceText',['../class_shop.html#aaac45bfcab8aef6458611c12800e5065',1,'Shop']]],
   ['damagetext_422',['damageText',['../class_shop.html#a5afadcfb4d4f2629b708c60761aa5f55',1,'Shop']]],
   ['damping_423',['damping',['../class_pathfinding_1_1_examples_1_1_astar_smooth_follow2.html#a22d74c4eb26d965c3d3763e3d714596a',1,'Pathfinding.Examples.AstarSmoothFollow2.damping()'],['../class_unity_standard_assets_1_1__2_d_1_1_camera2_d_follow.html#a47713bd9650a293b93861d1ff0128dd2',1,'UnityStandardAssets._2D.Camera2DFollow.damping()']]],
@@ -34,7 +34,7 @@ var searchData=
   ['del2_447',['del2',['../class_random_text_colour.html#a716e60a38fd9f9a17fcb0e726858b8d2',1,'RandomTextColour']]],
   ['delay_448',['delay',['../class_pathfinding_1_1_patrol.html#a09684a4ebf5c5cd155a47c6d3193b405',1,'Pathfinding.Patrol.delay()'],['../class_wave.html#a652d8b8ad38a01630a5e12a87188d923',1,'Wave.delay()'],['../class_unity_standard_assets_1_1_utility_1_1_timed_object_activator_1_1_entry.html#a7b892e6433f3ab2fe212b171b57e9a75',1,'UnityStandardAssets.Utility.TimedObjectActivator.Entry.delay()']]],
   ['delayedreset_449',['DelayedReset',['../class_unity_standard_assets_1_1_utility_1_1_object_resetter.html#ab44d29e021b02f8bf2a65fdd9500669f',1,'UnityStandardAssets::Utility::ObjectResetter']]],
-  ['delaytime_450',['delayTime',['../class_shooting.html#aa26f936cda3b769616d46a996e93e50e',1,'Shooting']]],
+  ['delaytime_450',['delayTime',['../class_enemy_shoot.html#a8762e706cd8a1fc294bd5bbc87648e57',1,'EnemyShoot.delayTime()'],['../class_shooting.html#aa26f936cda3b769616d46a996e93e50e',1,'Shooting.delayTime()']]],
   ['deleteconnection_451',['deleteConnection',['../class_pathfinding_1_1_node_link.html#ad7f4c37ece28d016effc7754df163f28',1,'Pathfinding::NodeLink']]],
   ['deleteoldsave_452',['DeleteOldSave',['../class_data_manager.html#a352b40045a19085e470e98d62305aa0f',1,'DataManager']]],
   ['density_453',['density',['../class_pathfinding_1_1_examples_1_1_procedural_world_1_1_procedural_prefab.html#a761ca658e7c227bde46406e15713fe9a',1,'Pathfinding::Examples::ProceduralWorld::ProceduralPrefab']]],

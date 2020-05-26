@@ -15,6 +15,8 @@ var annotated_dup =
     [ "DoxyThreadSafeOutput", "class_doxy_thread_safe_output.html", "class_doxy_thread_safe_output" ],
     [ "EndGameUI", "class_end_game_u_i.html", "class_end_game_u_i" ],
     [ "Enemy", "class_enemy.html", "class_enemy" ],
+    [ "EnemyBullet", "class_enemy_bullet.html", "class_enemy_bullet" ],
+    [ "EnemyShoot", "class_enemy_shoot.html", "class_enemy_shoot" ],
     [ "EnemyStats", "class_enemy_stats.html", "class_enemy_stats" ],
     [ "EventSystemChecker", "class_event_system_checker.html", null ],
     [ "GameActualization", "class_game_actualization.html", "class_game_actualization" ],

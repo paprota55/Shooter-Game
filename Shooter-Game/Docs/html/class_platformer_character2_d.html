@@ -132,6 +132,19 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>If crouching, check to see if the character can stand up</p>
+<p>If the character has a ceiling preventing them from standing up, keep them crouching</p>
+<p>Set whether or not the character is crouching in the animator</p>
+<p>only control the player if grounded or airControl is turned on</p>
+<p>Reduce the speed if crouching by the crouchSpeed multiplier</p>
+<p>The Speed animator parameter is set to the absolute value of the horizontal input.</p>
+<p>Move the character</p>
+<p>If the input is moving the player right and the player is facing left...</p>
+<p>... flip the player.</p>
+<p>Otherwise if the input is moving the player left and the player is facing right...</p>
+<p>... flip the player.</p>
+<p>If the player should jump...</p>
+<p>Add a vertical force to the player.</p>
 
 </div>
 </div>
@@ -144,7 +157,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_platformer_character2_d.html">PlatformerCharacter2D</a></li>
-    <li class="footer">Generated on Mon May 25 2020 18:00:59 for Shooter-Game by
+    <li class="footer">Generated on Tue May 26 2020 10:45:31 for Shooter-Game by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>

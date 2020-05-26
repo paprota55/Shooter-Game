@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
     ///particle system - dead animation
     public GameObject deadEffect;
     ///time to player spawn after death - in seconds
-    public int timeToSpawn = 3;
+    public int timeToSpawn = 5;
     
     ///sounds names
     public string gameMusicName = "GameMusic";

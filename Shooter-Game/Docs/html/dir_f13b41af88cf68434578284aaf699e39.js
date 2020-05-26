@@ -25,6 +25,12 @@ var dir_f13b41af88cf68434578284aaf699e39 =
       [ "EnemyStats", "class_enemy_stats.html", "class_enemy_stats" ],
       [ "Enemy", "class_enemy.html", "class_enemy" ]
     ] ],
+    [ "EnemyBullet.cs", "_enemy_bullet_8cs.html", [
+      [ "EnemyBullet", "class_enemy_bullet.html", "class_enemy_bullet" ]
+    ] ],
+    [ "EnemyShoot.cs", "_enemy_shoot_8cs.html", [
+      [ "EnemyShoot", "class_enemy_shoot.html", "class_enemy_shoot" ]
+    ] ],
     [ "GameActualization.cs", "_game_actualization_8cs.html", [
       [ "GameActualization", "class_game_actualization.html", "class_game_actualization" ]
     ] ],

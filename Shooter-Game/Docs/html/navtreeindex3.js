@@ -1,5 +1,14 @@
 var NAVTREEINDEX3 =
 {
+"class_pathfinding_1_1_a_i_base.html#ab81b2b9c3084a1c69e56a8dbbb336bee":[2,0,0,6,4],
+"class_pathfinding_1_1_a_i_base.html#ac29fa87a12223a03d6de65172aa2549c":[2,0,0,6,15],
+"class_pathfinding_1_1_a_i_base.html#ac55fbf35af935765d5abdd910dee8bd9":[2,0,0,6,14],
+"class_pathfinding_1_1_a_i_base.html#ac5f8e7ade498b0119d295abe28727fd7":[2,0,0,6,30],
+"class_pathfinding_1_1_a_i_base.html#ac85bb57601ed46324551331be62a055a":[2,0,0,6,11],
+"class_pathfinding_1_1_a_i_base.html#acbb4d33d999513ad040fdcfbf54d299c":[2,0,0,6,29],
+"class_pathfinding_1_1_a_i_base.html#ad13ed156c992eca7feee6489ffe78278":[2,0,0,6,56],
+"class_pathfinding_1_1_a_i_base.html#adc4e4d26d791e66ecebfc00fbb03328f":[2,0,0,6,62],
+"class_pathfinding_1_1_a_i_base.html#ae6ef29a15d34dcaf5b346667c75064d5":[2,0,0,6,17],
 "class_pathfinding_1_1_a_i_base.html#ae97d5e5c84ee58146b9a6c5fdfaf206a":[2,0,0,6,9],
 "class_pathfinding_1_1_a_i_base.html#ae9a733ea5feda6a0cec1e460c4c89e25":[2,0,0,6,35],
 "class_pathfinding_1_1_a_i_base.html#aebdae01932608c6e0a429a1de2c98089":[2,0,0,6,7],
@@ -240,14 +249,5 @@ var NAVTREEINDEX3 =
 "class_pathfinding_1_1_astar_profiler.html#ac2e2942863c016e6c8bc7e800abb5cae":[2,0,0,19,5],
 "class_pathfinding_1_1_astar_profiler.html#ad10cc7d1f8e7b2153848b8e0323ba72a":[2,0,0,19,7],
 "class_pathfinding_1_1_astar_profiler.html#ae9615229008d6c207e36ca187d905035":[2,0,0,19,1],
-"class_pathfinding_1_1_astar_profiler.html#ae9a439b766ac3f197a2342a6329cb7bd":[2,0,0,19,8],
-"class_pathfinding_1_1_astar_profiler.html#af8fa6b8d75250ae32616d5cdc57c1ab3":[2,0,0,19,4],
-"class_pathfinding_1_1_astar_profiler_1_1_profile_point.html":[2,0,0,19,0],
-"class_pathfinding_1_1_astar_profiler_1_1_profile_point.html#a0ed3a242a1d6157798988316878d47a5":[2,0,0,19,0,2],
-"class_pathfinding_1_1_astar_profiler_1_1_profile_point.html#a4fe04416bbd057d8f1a92869085d4bda":[2,0,0,19,0,1],
-"class_pathfinding_1_1_astar_profiler_1_1_profile_point.html#a733454c7a552c3b70bb7f21803d6c8a0":[2,0,0,19,0,3],
-"class_pathfinding_1_1_astar_profiler_1_1_profile_point.html#af1188335efd4ea4c9211350e3a2e5ef1":[2,0,0,19,0,0],
-"class_pathfinding_1_1_astar_splines.html":[2,0,0,20],
-"class_pathfinding_1_1_astar_splines.html#a0eedb63e611663b1a68a3358be25b51e":[2,0,0,20,0],
-"class_pathfinding_1_1_astar_splines.html#a6faf5dd964a4fe02f6b0b1da0092b748":[2,0,0,20,1]
+"class_pathfinding_1_1_astar_profiler.html#ae9a439b766ac3f197a2342a6329cb7bd":[2,0,0,19,8]
 };
